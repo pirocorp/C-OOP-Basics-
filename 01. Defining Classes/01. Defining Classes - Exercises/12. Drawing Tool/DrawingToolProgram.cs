@@ -11,14 +11,7 @@
             var width = int.Parse(Console.ReadLine());
             var height = 0;
 
-            if (name == "Square")
-            {
-                height = width;
-            }
-            else
-            {
-                height = int.Parse(Console.ReadLine());
-            }
+            height = name == "Square" ? width : int.Parse(Console.ReadLine());
 
             var figure = new DrawingTool(width, height, name);
             Console.WriteLine(figure.Draw());
