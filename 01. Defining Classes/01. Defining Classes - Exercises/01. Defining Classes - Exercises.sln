@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Family Tree", "10. Fami
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Cat Lady", "11. Cat Lady\11. Cat Lady.csproj", "{C646303C-9345-43E3-BC1F-FEAAD2824A96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Drawing Tool", "12. Drawing Tool\12. Drawing Tool.csproj", "{FDA53AB7-93F5-4862-9C0D-B179557FE982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{C646303C-9345-43E3-BC1F-FEAAD2824A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C646303C-9345-43E3-BC1F-FEAAD2824A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C646303C-9345-43E3-BC1F-FEAAD2824A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA53AB7-93F5-4862-9C0D-B179557FE982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA53AB7-93F5-4862-9C0D-B179557FE982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA53AB7-93F5-4862-9C0D-B179557FE982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA53AB7-93F5-4862-9C0D-B179557FE982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
