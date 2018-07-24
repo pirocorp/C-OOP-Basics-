@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Speed Racing", "04. Spe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Raw Data", "05. Raw Data\05. Raw Data.csproj", "{F6D38941-0471-4FA5-A67C-421481EF071A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Rectangle Intersection", "06. Rectangle Intersection\06. Rectangle Intersection.csproj", "{A76855A5-D9FE-4E56-A36D-E76A21A2D1E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. Rectangle Intersection", "06. Rectangle Intersection\06. Rectangle Intersection.csproj", "{A76855A5-D9FE-4E56-A36D-E76A21A2D1E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Car Salesman", "07. Car Salesman\07. Car Salesman.csproj", "{F4782A2A-1A36-496C-9E40-B102DE4F6481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. Car Salesman", "07. Car Salesman\07. Car Salesman.csproj", "{F4782A2A-1A36-496C-9E40-B102DE4F6481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Pokemon Trainer", "08. Pokemon Trainer\08. Pokemon Trainer.csproj", "{5A221D81-C901-4ED6-B0C9-A3919A7BDFB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F4782A2A-1A36-496C-9E40-B102DE4F6481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4782A2A-1A36-496C-9E40-B102DE4F6481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4782A2A-1A36-496C-9E40-B102DE4F6481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A221D81-C901-4ED6-B0C9-A3919A7BDFB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A221D81-C901-4ED6-B0C9-A3919A7BDFB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A221D81-C901-4ED6-B0C9-A3919A7BDFB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A221D81-C901-4ED6-B0C9-A3919A7BDFB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
