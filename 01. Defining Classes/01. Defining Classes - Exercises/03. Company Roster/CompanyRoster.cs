@@ -18,11 +18,11 @@
             }
 
             var highAverageDepartment = employees
-                .GroupBy(x => x.Department, (s, enumerable) => new
+                .GroupBy(x => x.Department, (s, employeesByGroup) => new
                 {
                     department = s,
-                    workers = employees.Where(e => e.Department == s).ToList(),
-                    average = employees.Where(e => e.Department == s).Select(e => e.Salary).Average(),
+                    workers = employeesByGroup.ToList(),
+                    average = employeesByGroup.Average(e => e.Salary),
                 })
                 .OrderByDescending(g => g.average)
                 .First();
