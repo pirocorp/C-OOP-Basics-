@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Greedy Times", "05. Gre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Sneaking", "06. Sneaking\06. Sneaking.csproj", "{6EA50CD7-C8E3-4A3B-9761-9D287C5ACD3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Family Tree", "07. Family Tree\07. Family Tree.csproj", "{C03FB6B2-77D8-43FC-B4C3-8B46040FBDAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6EA50CD7-C8E3-4A3B-9761-9D287C5ACD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA50CD7-C8E3-4A3B-9761-9D287C5ACD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA50CD7-C8E3-4A3B-9761-9D287C5ACD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03FB6B2-77D8-43FC-B4C3-8B46040FBDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03FB6B2-77D8-43FC-B4C3-8B46040FBDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03FB6B2-77D8-43FC-B4C3-8B46040FBDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03FB6B2-77D8-43FC-B4C3-8B46040FBDAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
