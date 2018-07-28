@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_ClassBox", "P01_ClassBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_AnimalFarm", "P02_AnimalFarm\P02_AnimalFarm.csproj", "{16BF97A2-09C7-4C6D-86B0-FF93904EFDD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Shopping Spree", "P03_Shopping Spree\P03_ShoppingSpree.csproj", "{D2EC3C8F-0506-4D28-BDDA-ED5D0A394461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{16BF97A2-09C7-4C6D-86B0-FF93904EFDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16BF97A2-09C7-4C6D-86B0-FF93904EFDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16BF97A2-09C7-4C6D-86B0-FF93904EFDD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EC3C8F-0506-4D28-BDDA-ED5D0A394461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EC3C8F-0506-4D28-BDDA-ED5D0A394461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EC3C8F-0506-4D28-BDDA-ED5D0A394461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EC3C8F-0506-4D28-BDDA-ED5D0A394461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
