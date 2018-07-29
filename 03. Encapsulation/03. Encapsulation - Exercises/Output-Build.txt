@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: P05_PizzaCalories, Configuration: Debug Any CPU ------
+1>P05_PizzaCalories -> D:\source\repos\C-OOP-Basics-\03. Encapsulation\03. Encapsulation - Exercises\P05_PizzaCalories\bin\Debug\netcoreapp2.0\P05_PizzaCalories.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
