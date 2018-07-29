@@ -2,7 +2,9 @@
 
 public class Topping
 {
-    private const int BaseCaloriesPerGram = 2;
+    private const int BASE_CALORIES_PER_GRAM = 2;
+    private const int MIN_VALUE = 1;
+    private const int MAX_VALUE = 50;
 
     private int weightInGrams;
     private TypeOfTopping typeOfTopping;
@@ -12,9 +14,9 @@ public class Topping
         get => this.weightInGrams;
         private set
         {
-            if (value <= 0 || value > 50)
+            if (value < MIN_VALUE || value > MAX_VALUE)
             {
-                throw new ArgumentException($"{TypeOfTopping} weight should be in the range [1..50].");
+                throw new ArgumentException($"{TypeOfTopping} weight should be in the range [{MIN_VALUE}..{MAX_VALUE}].");
             }
 
             this.weightInGrams = value;
@@ -43,7 +45,7 @@ public class Topping
 
     public double CalculateCalories()
     {
-        var baseCalories = BaseCaloriesPerGram * WeightInGrams;
+        var baseCalories = BASE_CALORIES_PER_GRAM * WeightInGrams;
         var totalCalories = baseCalories * ((int)typeOfTopping / 10.0);
         return totalCalories;
     }

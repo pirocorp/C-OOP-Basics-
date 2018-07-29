@@ -2,7 +2,9 @@
 
 public class Dough
 {
-    private const int BaseCaloriesPerGram = 2;
+    private const int BASE_CALORIES_PER_GRAM = 2;
+    private const int MIN_VALUE = 1;
+    private const int MAX_VALUE = 200;
 
     private int weightInGrams;
     private FlourType flourType;
@@ -13,9 +15,9 @@ public class Dough
         get => this.weightInGrams;
         private set
         {
-            if (value <= 0 || value > 200)
+            if (value < MIN_VALUE || value > MAX_VALUE)
             {
-                throw new ArgumentException($"Dough weight should be in the range [1..200].");
+                throw new ArgumentException($"Dough weight should be in the range [{MIN_VALUE}..{MAX_VALUE}].");
             }
 
             this.weightInGrams = value;
@@ -36,7 +38,7 @@ public class Dough
 
     public double CalculateCalories()
     {
-        var baseCalories = BaseCaloriesPerGram * WeightInGrams;
+        var baseCalories = BASE_CALORIES_PER_GRAM * WeightInGrams;
         var totalCalories = baseCalories * ((int) bakingTechnique / 10.0) * ((int) flourType / 10.0);
         return totalCalories;
     }
