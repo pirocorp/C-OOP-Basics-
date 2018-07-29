@@ -10,11 +10,7 @@ public class ParentTest
         get => this.name;
         protected set
         {
-            if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentException($"{nameof(Name)} cannot be empty");
-            }
-
+            Validator.ValidateName(value);
             this.name = value;
         }
     }
@@ -24,11 +20,7 @@ public class ParentTest
         get => this.money;
         protected set
         {
-            if (value < 0)
-            {
-                throw new ArgumentException($"{nameof(Money)} cannot be negative");
-            }
-
+            Validator.ValidateMoney(value);
             this.money = value;
         }
     }
