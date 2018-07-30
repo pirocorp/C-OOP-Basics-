@@ -4,9 +4,12 @@ public class Startup
 {
     static void Main()
     {
-        var puppy = new Puppy();
-        puppy.Eat();
-        puppy.Bark();
-        puppy.Weep();
+        var dog = new Dog();
+        dog.Eat();
+        dog.Bark();
+       
+        var cat = new Cat();
+        cat.Eat();
+        cat.Meow();
     }
 }
