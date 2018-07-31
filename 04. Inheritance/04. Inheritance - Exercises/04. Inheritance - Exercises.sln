@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Person", "P01_Person\P01_Person.csproj", "{3EB56B9C-A33D-40FE-8762-936C333340FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Person", "P01_Person\P01_Person.csproj", "{3EB56B9C-A33D-40FE-8762-936C333340FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_BookShop", "P02_BookShop\P02_BookShop.csproj", "{793D6A26-560D-4818-8173-F2F5E2D0D864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_BookShop", "P02_BookShop\P02_BookShop.csproj", "{793D6A26-560D-4818-8173-F2F5E2D0D864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Mankind", "P03_Mankind\P03_Mankind.csproj", "{31A8E1BA-5664-4DB6-9242-371E35B3644E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_Mankind", "P03_Mankind\P03_Mankind.csproj", "{31A8E1BA-5664-4DB6-9242-371E35B3644E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_OnlineRadioDatabase", "P04_OnlineRadioDatabase\P04_OnlineRadioDatabase.csproj", "{78F978A3-2187-420A-B750-675CD1D07496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{31A8E1BA-5664-4DB6-9242-371E35B3644E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31A8E1BA-5664-4DB6-9242-371E35B3644E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31A8E1BA-5664-4DB6-9242-371E35B3644E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F978A3-2187-420A-B750-675CD1D07496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F978A3-2187-420A-B750-675CD1D07496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F978A3-2187-420A-B750-675CD1D07496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F978A3-2187-420A-B750-675CD1D07496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
