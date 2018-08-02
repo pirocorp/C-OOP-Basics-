@@ -2,20 +2,18 @@
 
 namespace P05_BorderControl
 {
-    public class Citizen : IInhabitants, IBornable, IBuyer
+    public class Rebel : IBuyer
     {
         private string name;
         private int age;
-        private string id;
-        private string birthdate;
+        private string group;
         private int food;
 
-        public Citizen(string name, int age, string id, string birthdate)
+        public Rebel(string name, int age, string group)
         {
             this.Name = name;
             this.Age = age;
-            this.Id = id;
-            this.Birthdate = birthdate;
+            this.Group = group;
             food = 0;
         }
 
@@ -24,7 +22,6 @@ namespace P05_BorderControl
             get => this.name;
             private set
             {
-                //Validator.ValidateString(value, nameof(Name));
                 this.name = value;
             }
         }
@@ -34,27 +31,16 @@ namespace P05_BorderControl
             get => this.age;
             private set
             {
-                //Validator.ValidateAge(value, nameof(Age));
                 this.age = value;
             }
         }
 
-        public string Id
+        public string Group
         {
-            get => this.id;
+            get => this.group;
             private set
             {
-                //Validator.ValidateString(value, nameof(Id));
-                this.id = value;
-            }
-        }
-
-        public string Birthdate
-        {
-            get => this.birthdate;
-            private set
-            {
-                this.birthdate = value;
+                this.group = value;
             }
         }
 
@@ -66,7 +52,7 @@ namespace P05_BorderControl
 
         public void BuyFood()
         {
-            this.Food += 10;
+            this.Food += 5;
         }
     }
 }
