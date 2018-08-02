@@ -2,17 +2,19 @@
 
 namespace P05_BorderControl
 {
-    public class Citizen : IInhabitants
+    public class Citizen : IInhabitants, IBornable
     {
         private string name;
         private int age;
         private string id;
+        private string birthdate;
 
-        public Citizen(string name, int age, string id)
+        public Citizen(string name, int age, string id, string birthdate)
         {
             this.Name = name;
             this.Age = age;
             this.Id = id;
+            this.Birthdate = birthdate;
         }
 
         public string Name
@@ -42,6 +44,15 @@ namespace P05_BorderControl
             {
                 //Validator.ValidateString(value, nameof(Id));
                 id = value;
+            }
+        }
+
+        public string Birthdate
+        {
+            get => this.birthdate;
+            private set
+            {
+                this.birthdate = value;
             }
         }
     }
