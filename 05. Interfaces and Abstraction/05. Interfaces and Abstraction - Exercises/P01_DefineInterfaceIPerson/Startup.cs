@@ -6,8 +6,11 @@ public class Startup
     {
         var name = Console.ReadLine();
         var age = int.Parse(Console.ReadLine());
-        IPerson person = new Citizen(name, age);
-        Console.WriteLine(person.Name);
-        Console.WriteLine(person.Age);
+        var id = Console.ReadLine();
+        var birthdate = Console.ReadLine();
+        IIdentifiable identifiable = new Citizen(name, age, id, birthdate);
+        IBirthable birthable = new Citizen(name, age, id, birthdate);
+        Console.WriteLine(identifiable.Id);
+        Console.WriteLine(birthable.Birthdate);
     }
 }
