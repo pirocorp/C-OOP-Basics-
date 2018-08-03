@@ -15,17 +15,17 @@
 
         public string Driver
         {
-            get => driver;
+            get => this.driver;
             set
             {
                 //Validator.ValidateString(value, nameof(Driver));
-                driver = value;
+                this.driver = value;
             }
         }
 
         public override string ToString()
         {
-            return $"{base.Model}/{Stop()}/{Start()}/{this.Driver}";
+            return $"{this.Model}/{this.Stop()}/{this.Start()}/{this.Driver}";
         }
     }
 }

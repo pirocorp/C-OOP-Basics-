@@ -23,7 +23,7 @@ namespace P08_MilitaryElite
         public override string ToString()
         {
             return $"{base.ToString()}" + Environment.NewLine + 
-                   $"Corps: {Corps.ToString()}";
+                   $"Corps: {this.Corps.ToString()}";
         }
     }
 }

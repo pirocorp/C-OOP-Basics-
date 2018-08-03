@@ -19,7 +19,7 @@ namespace P08_MilitaryElite
         public Engineer(int id, string firstname, string lastname, decimal salary, Corps corps)
             : base(id, firstname, lastname, salary, corps)
         {
-            repairs = new List<Repair>();
+            this.repairs = new List<Repair>();
         }
 
         public IReadOnlyCollection<Repair> Repairs
@@ -29,7 +29,7 @@ namespace P08_MilitaryElite
 
         public override string ToString()
         {
-            var result = Repairs
+            var result = this.Repairs
                 .Select(x => x.ToString())
                 .Select(x => $"  {x}")
                 .ToArray();

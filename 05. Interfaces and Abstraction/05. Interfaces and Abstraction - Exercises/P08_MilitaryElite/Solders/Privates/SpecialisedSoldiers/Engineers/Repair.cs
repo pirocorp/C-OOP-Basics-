@@ -4,8 +4,8 @@
     {
         public Repair(string partName, int hoursWorked)
         {
-            PartName = partName;
-            HoursWorked = hoursWorked;
+            this.PartName = partName;
+            this.HoursWorked = hoursWorked;
         }
 
         public string PartName { get; private set; }

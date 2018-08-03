@@ -19,14 +19,14 @@ namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
         public Commando(int id, string firstname, string lastname, decimal salary, Corps corps) 
             : base(id, firstname, lastname, salary, corps)
         {
-            missions = new List<Mission>();
+            this.missions = new List<Mission>();
         }
 
         public IReadOnlyCollection<Mission> Missions => this.missions;
 
         public override string ToString()
         {
-            var result = Missions
+            var result = this.Missions
                 .Select(x => x.ToString())
                 .Select(x => $"  {x}")
                 .ToArray();

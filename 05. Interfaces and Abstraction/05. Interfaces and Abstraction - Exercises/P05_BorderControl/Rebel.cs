@@ -14,7 +14,7 @@ namespace P05_BorderControl
             this.Name = name;
             this.Age = age;
             this.Group = group;
-            food = 0;
+            this.food = 0;
         }
 
         public string Name

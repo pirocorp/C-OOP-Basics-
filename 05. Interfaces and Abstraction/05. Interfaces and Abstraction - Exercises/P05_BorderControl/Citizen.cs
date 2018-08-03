@@ -16,7 +16,7 @@ namespace P05_BorderControl
             this.Age = age;
             this.Id = id;
             this.Birthdate = birthdate;
-            food = 0;
+            this.food = 0;
         }
 
         public string Name

@@ -18,7 +18,7 @@ namespace P02_Ferrari
             get => this.make;
             protected set
             {
-                Validator.ValidateString(value, nameof(Make));
+                Validator.ValidateString(value, nameof(this.Make));
                 this.make = value;
             }
         }
@@ -28,7 +28,7 @@ namespace P02_Ferrari
             get => this.model;
             protected set
             {
-                Validator.ValidateString(value, nameof(Model));
+                Validator.ValidateString(value, nameof(this.Model));
                 this.model = value;
             }
         }
@@ -45,7 +45,7 @@ namespace P02_Ferrari
 
         public override string ToString()
         {
-            return $"{this.Make}/{this.Model}/{Stop()}/{Start()}";
+            return $"{this.Make}/{this.Model}/{this.Stop()}/{this.Start()}";
         }
     }
 }

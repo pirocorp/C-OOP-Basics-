@@ -9,7 +9,7 @@ namespace P03_Telephony
         public string Call(string inputString)
         {
             var numbers = inputString.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(ValidateNumbers)
+                .Select(this.ValidateNumbers)
                 .ToArray();
 
             return string.Join(Environment.NewLine, numbers);
@@ -32,7 +32,7 @@ namespace P03_Telephony
         {
             var urls = inputString
                 .Split(new[] { ' ' })
-                .Select(ValidateUrl)
+                .Select(this.ValidateUrl)
                 .ToArray();
 
             return string.Join(Environment.NewLine, urls);

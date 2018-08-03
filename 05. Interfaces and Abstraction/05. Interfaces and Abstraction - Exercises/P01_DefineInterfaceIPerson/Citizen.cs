@@ -18,7 +18,7 @@
         get => this.name;
         set
         {
-            Validator.ValidateString(value, nameof(Name));
+            Validator.ValidateString(value, nameof(this.Name));
             this.name = value;
         }
     }
@@ -28,7 +28,7 @@
         get => this.age;
         set
         {
-            Validator.ValidateAge(value, nameof(Age));
+            Validator.ValidateAge(value, nameof(this.Age));
             this.age = value;
         }
     }
@@ -38,7 +38,7 @@
         get => this.birthdate;
         set
         {
-            Validator.ValidateString(value, nameof(Birthdate));
+            Validator.ValidateString(value, nameof(this.Birthdate));
             this.birthdate = value;
         }
     }
@@ -48,7 +48,7 @@
         get => this.id;
         set
         {
-            Validator.ValidateString(value, nameof(Id));
+            Validator.ValidateString(value, nameof(this.Id));
             this.id = value;
         }
     }

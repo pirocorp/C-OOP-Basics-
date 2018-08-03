@@ -8,13 +8,7 @@
     {
         private const int RemovalIndex = 0;
 
-        public IReadOnlyCollection<string> Used
-        {
-            get
-            {
-                return this.Data as IReadOnlyCollection<string>;
-            }
-        }
+        public IReadOnlyCollection<string> Used => this.Data;
 
         public override string Remove()
         {

@@ -6,8 +6,8 @@ namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
     {
         public Mission(string codeName, MissionState missionState)
         {
-            CodeName = codeName;
-            MissionState = missionState;
+            this.CodeName = codeName;
+            this.MissionState = missionState;
         }
 
         public string CodeName { get; private set; }
@@ -15,7 +15,7 @@ namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
 
         public void CompleteMission()
         {
-            MissionState = MissionState.Finished;
+            this.MissionState = MissionState.Finished;
         }
 
         public override string ToString()

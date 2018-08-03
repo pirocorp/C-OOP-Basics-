@@ -14,10 +14,10 @@ namespace P08_MilitaryElite
 
         public decimal Salary
         {
-            get => salary;
+            get => this.salary;
             protected set
             {
-                Validator.ValidateSalary(value, nameof(Salary));
+                Validator.ValidateSalary(value, nameof(this.Salary));
                 this.salary = value;
             }
         }
