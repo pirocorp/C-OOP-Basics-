@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using P08_MilitaryElite.Enums;
-using P08_MilitaryElite.Solders.Privates.SpecialisedSoldiers.Interfaces;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Enums;
+    using Solders.Privates.SpecialisedSoldiers.Interfaces;
+
     public class Engineer : SpecialisedSoldier, IEngineer
     {
         private List<Repair> repairs;

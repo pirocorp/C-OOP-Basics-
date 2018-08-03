@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using P08_MilitaryElite.Enums;
-using P08_MilitaryElite.Solders.Interfaces;
-using P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos;
-using P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos.Enums;
-using P08_MilitaryElite.Solders.Spys;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Enums;
+    using Solders.Interfaces;
+    using Solders.SpecialisedSoldiers.Commandos;
+    using Solders.SpecialisedSoldiers.Commandos.Enums;
+    using Solders.Spys;
+
     public class Startup
     {
         public static void Main()
@@ -84,27 +84,25 @@ namespace P08_MilitaryElite
             {
                 return new List<Mission>();
             }
-            else
+
+            var result = new List<Mission>();
+
+            var missionData = tokens.Skip(6).ToArray();
+
+            for (var i = 0; i < missionData.Length / 2; i++)
             {
-                var result = new List<Mission>();
+                var currentIndex = i * 2;
+                var partName = missionData[currentIndex];
+                var parsed = Enum.TryParse(missionData[currentIndex + 1], out MissionState missionState);
 
-                var missionData = tokens.Skip(6).ToArray();
-
-                for (var i = 0; i < missionData.Length / 2; i++)
+                if (parsed)
                 {
-                    var currentIndex = i * 2;
-                    var partName = missionData[currentIndex];
-                    var parsed = Enum.TryParse(missionData[currentIndex + 1], out MissionState missionState);
-
-                    if (parsed)
-                    {
-                        var currentRepair = new Mission(partName, missionState);
-                        result.Add(currentRepair);
-                    }
+                    var currentRepair = new Mission(partName, missionState);
+                    result.Add(currentRepair);
                 }
-
-                return result;
             }
+
+            return result;
         }
 
         private static List<Repair> ParseRepairs(string[] tokens)
@@ -113,23 +111,21 @@ namespace P08_MilitaryElite
             {
                 return new List<Repair>();
             }
-            else
+
+            var repairData = tokens.Skip(6).ToArray();
+
+            var result = new List<Repair>();
+
+            for (var i = 0; i < repairData.Length / 2; i++)
             {
-                var repairData = tokens.Skip(6).ToArray();
-
-                var result = new List<Repair>();
-
-                for (var i = 0; i < repairData.Length / 2; i++)
-                {
-                    var currentIndex = i * 2;
-                    var partName = repairData[currentIndex];
-                    var hours = int.Parse(repairData[currentIndex + 1]);
-                    var currentRepair = new Repair(partName, hours);
-                    result.Add(currentRepair);
-                }
-
-                return result;
+                var currentIndex = i * 2;
+                var partName = repairData[currentIndex];
+                var hours = int.Parse(repairData[currentIndex + 1]);
+                var currentRepair = new Repair(partName, hours);
+                result.Add(currentRepair);
             }
+
+            return result;
         }
 
         private static List<Private> ParsePrivates(string[] tokens, List<Private> solders)

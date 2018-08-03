@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using P05_BorderControl.Interfaces;
-
-namespace P05_BorderControl
+﻿namespace P05_BorderControl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Interfaces;
+
     public class Startup
     {
         public static void Main()

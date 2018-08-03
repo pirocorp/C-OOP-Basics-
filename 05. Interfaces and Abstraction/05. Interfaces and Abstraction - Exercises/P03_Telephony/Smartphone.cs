@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using P03_Telephony.Interfaces;
-
-namespace P03_Telephony
+﻿namespace P03_Telephony
 {
+    using System;
+    using System.Linq;
+    using Interfaces;
+
     public class Smartphone : ICallable, IBrowsable
     {
         public string Call(string inputString)

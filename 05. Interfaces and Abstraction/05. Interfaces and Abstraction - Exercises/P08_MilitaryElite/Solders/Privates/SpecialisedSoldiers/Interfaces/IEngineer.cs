@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace P08_MilitaryElite.Solders.Privates.SpecialisedSoldiers.Interfaces
+﻿namespace P08_MilitaryElite.Solders.Privates.SpecialisedSoldiers.Interfaces
 {
+    using System.Collections.Generic;
+
     public interface IEngineer
     {
         IReadOnlyCollection<Repair> Repairs { get; }

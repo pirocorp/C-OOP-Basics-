@@ -1,20 +1,23 @@
-﻿using System;
-
-public static class Validator
+﻿namespace P08_MilitaryElite
 {
-    public static void ValidateString(string value, string nameOfProperty)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            throw new ArgumentException($"{nameOfProperty} cannot be null, empty or white space");
-        }
-    }
+    using System;
 
-    public static void ValidateSalary(decimal value, string nameOfProperty)
+    public static class Validator
     {
-        if (value < 0)
+        public static void ValidateString(string value, string nameOfProperty)
         {
-            throw new ArgumentException($"{nameOfProperty} cannot be negative");
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException($"{nameOfProperty} cannot be null, empty or white space");
+            }
+        }
+
+        public static void ValidateSalary(decimal value, string nameOfProperty)
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException($"{nameOfProperty} cannot be negative");
+            }
         }
     }
 }

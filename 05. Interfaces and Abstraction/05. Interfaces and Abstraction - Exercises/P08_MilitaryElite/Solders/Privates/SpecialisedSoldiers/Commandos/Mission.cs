@@ -1,7 +1,7 @@
-﻿using P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos.Enums;
-
-namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
+﻿namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
 {
+    using Enums;
+
     public class Mission
     {
         public Mission(string codeName, MissionState missionState)

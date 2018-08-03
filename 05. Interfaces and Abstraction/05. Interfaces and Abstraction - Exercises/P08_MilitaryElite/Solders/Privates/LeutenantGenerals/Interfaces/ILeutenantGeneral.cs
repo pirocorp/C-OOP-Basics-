@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace P08_MilitaryElite.Solders.Privates.Interfaces
+﻿namespace P08_MilitaryElite.Solders.Privates.Interfaces
 {
+    using System.Collections.Generic;
+
     public interface ILeutenantGeneral
     {
         IReadOnlyCollection<Private> Privates { get; }

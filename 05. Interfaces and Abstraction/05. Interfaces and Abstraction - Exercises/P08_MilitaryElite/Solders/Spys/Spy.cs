@@ -1,8 +1,8 @@
-﻿using System;
-using P08_MilitaryElite.Solders.Spys.Interfaces;
-
-namespace P08_MilitaryElite.Solders.Spys
+﻿namespace P08_MilitaryElite.Solders.Spys
 {
+    using System;
+    using Interfaces;
+
     public class Spy : Soldier, ISpy
     {
         private int codeNumber;

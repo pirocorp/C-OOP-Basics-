@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using P08_MilitaryElite.Solders.Privates.Interfaces;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Solders.Privates.Interfaces;
+
     public class LeutenantGeneral : Private, ILeutenantGeneral
     {
         private List<Private> privates;

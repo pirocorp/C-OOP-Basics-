@@ -1,7 +1,7 @@
-﻿using P08_MilitaryElite.Solders.Privates.Interfaces;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using Solders.Privates.Interfaces;
+
     public class Private : Soldier, IPrivate
     {
         private decimal salary;

@@ -1,20 +1,23 @@
-﻿using System;
-
-public static class Validator
+﻿namespace P05_BorderControl
 {
-    public static void ValidateString(string value, string nameOfProperty)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            throw new ArgumentException($"{nameOfProperty} cannot be null, empty or white space");
-        }
-    }
+    using System;
 
-    public static void ValidateAge(int value, string nameOfProperty)
+    public static class Validator
     {
-        if (value < 0 || value > 200)
+        public static void ValidateString(string value, string nameOfProperty)
         {
-            throw new ArgumentException($"Age cannot be negative or more than 200");
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException($"{nameOfProperty} cannot be null, empty or white space");
+            }
+        }
+
+        public static void ValidateAge(int value, string nameOfProperty)
+        {
+            if (value < 0 || value > 200)
+            {
+                throw new ArgumentException($"Age cannot be negative or more than 200");
+            }
         }
     }
 }

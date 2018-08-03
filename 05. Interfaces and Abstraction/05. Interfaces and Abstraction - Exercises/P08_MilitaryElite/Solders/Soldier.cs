@@ -1,7 +1,7 @@
-﻿using P08_MilitaryElite.Solders.Interfaces;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using Solders.Interfaces;
+
     public abstract class Soldier : ISoldier
     {
         private int id;

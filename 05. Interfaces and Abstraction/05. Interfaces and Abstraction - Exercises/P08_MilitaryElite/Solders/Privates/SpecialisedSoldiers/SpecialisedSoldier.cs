@@ -1,9 +1,9 @@
-﻿using System;
-using P08_MilitaryElite.Enums;
-using P08_MilitaryElite.Solders.Privates.Interfaces;
-
-namespace P08_MilitaryElite
+﻿namespace P08_MilitaryElite
 {
+    using System;
+    using Enums;
+    using Solders.Privates.Interfaces;
+
     public abstract class SpecialisedSoldier : Private, ISpecialisedSoldier
     {
         private Corps corps;

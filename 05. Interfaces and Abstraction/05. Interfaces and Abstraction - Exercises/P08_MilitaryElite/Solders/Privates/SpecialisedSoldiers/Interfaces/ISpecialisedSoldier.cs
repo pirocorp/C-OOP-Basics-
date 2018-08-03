@@ -1,7 +1,7 @@
-﻿using P08_MilitaryElite.Enums;
-
-namespace P08_MilitaryElite.Solders.Privates.Interfaces
+﻿namespace P08_MilitaryElite.Solders.Privates.Interfaces
 {
+    using Enums;
+
     public interface ISpecialisedSoldier
     {
         Corps Corps { get; }

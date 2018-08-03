@@ -1,7 +1,7 @@
-﻿using P05_BorderControl.Interfaces;
-
-namespace P05_BorderControl
+﻿namespace P05_BorderControl
 {
+    using Interfaces;
+
     public class Citizen : IInhabitants, IBornable, IBuyer
     {
         private string name;

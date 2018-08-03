@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using P08_MilitaryElite.Enums;
-using P08_MilitaryElite.Solders.Privates.SpecialisedSoldiers.Interfaces;
-
-namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
+﻿namespace P08_MilitaryElite.Solders.SpecialisedSoldiers.Commandos
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using P08_MilitaryElite.Enums;
+    using Privates.SpecialisedSoldiers.Interfaces;
+
     public class Commando : SpecialisedSoldier, ICommando
     {
         private List<Mission> missions;
