@@ -1,9 +1,9 @@
-﻿using System;
-using System.Text;
-using P09_CollectionHierarchy.Interfaces;
-
-namespace P09_CollectionHierarchy
+﻿namespace P09_CollectionHierarchy
 {
+    using System;
+    using System.Text;
+    using P09_CollectionHierarchy.Interfaces;
+
     public class Startup
     {
         private static StringBuilder resultingOutput = new StringBuilder();
