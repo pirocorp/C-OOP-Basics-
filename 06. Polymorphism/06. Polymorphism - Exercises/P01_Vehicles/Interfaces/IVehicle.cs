@@ -6,6 +6,8 @@
 
         string Drive(double distance);
 
+        string DriveEmpty(double distance);
+
         string ToString();
     }
 }

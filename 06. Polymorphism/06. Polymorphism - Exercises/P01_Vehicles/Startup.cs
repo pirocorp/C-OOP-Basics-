@@ -10,12 +10,13 @@
     {
         private const double CAR_AIR_COND_CONSUMPTION = 0.9;
         private const double TRUCK_AIR_COND_CONSUMPTION = 1.6;
+        private const double BUS_AIR_COND_CONSUMPTION = 1.4;
 
         public static void Main()
         {
             var vehicles = new Dictionary<string, IVehicle>();
 
-            for (var i = 0; i < 2; i++)
+            for (var i = 0; i < 3; i++)
             {
                 var currentVehicle = VehicleFactory(Console.ReadLine());
                 var vehicleType = currentVehicle.GetType().Name;
@@ -37,7 +38,17 @@
                         Console.WriteLine(vehicles[vehicleType].Drive(value));
                         break;
                     case "Refuel":
-                        vehicles[vehicleType].Refuel(value);
+                        try
+                        {
+                            vehicles[vehicleType].Refuel(value);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        break;
+                    case "DriveEmpty":
+                        Console.WriteLine(vehicles[vehicleType].DriveEmpty(value));
                         break;
                 }
             }
@@ -50,12 +61,18 @@
             var vehicleDetails = readLine.Split();
             var vehicleType = vehicleDetails[0];
 
+            var fuelQuantaty = double.Parse(vehicleDetails[1]);
+            var fuelConsumption = double.Parse(vehicleDetails[2]);
+            var tankCapacity = double.Parse(vehicleDetails[3]);
+
             switch (vehicleType)
             {
                 case "Car":
-                    return new Car(double.Parse(vehicleDetails[1]), double.Parse(vehicleDetails[2]), CAR_AIR_COND_CONSUMPTION); ;
+                    return new Car(fuelQuantaty, fuelConsumption, CAR_AIR_COND_CONSUMPTION, tankCapacity); ;
                 case "Truck":
-                    return new Truck(double.Parse(vehicleDetails[1]), double.Parse(vehicleDetails[2]), TRUCK_AIR_COND_CONSUMPTION);
+                    return new Truck(fuelQuantaty, fuelConsumption, TRUCK_AIR_COND_CONSUMPTION, tankCapacity);
+                case "Bus":
+                    return new Bus(fuelQuantaty, fuelConsumption, BUS_AIR_COND_CONSUMPTION, tankCapacity);
                 default:
                     throw new NotSupportedException();
             }

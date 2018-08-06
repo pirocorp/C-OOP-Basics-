@@ -4,15 +4,15 @@
     {
         private const double TAKEN_FUEL_IN_CHARGING = 0.95;
 
-        public Truck(double fuelQuantity, double fuelConsumption, double airConditioningConsumption)
-            : base(fuelQuantity, fuelConsumption, airConditioningConsumption)
+        public Truck(double fuelQuantity, double fuelConsumption, double airConditioningConsumption, double tankCapacity)
+            : base(fuelQuantity, fuelConsumption, airConditioningConsumption, tankCapacity)
         {
         }
 
         public override void Refuel(double fuel)
         {
-            fuel *= TAKEN_FUEL_IN_CHARGING;
             base.Refuel(fuel);
+            this.FuelQuantity -= (1 - TAKEN_FUEL_IN_CHARGING) * fuel;
         }
     }
 }
