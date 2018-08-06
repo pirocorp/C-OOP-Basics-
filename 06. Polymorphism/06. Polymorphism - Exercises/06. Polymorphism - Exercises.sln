@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Vehicles", "P01_Vehicles\P01_Vehicles.csproj", "{BCE73431-46D9-420B-A931-612221168CED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_WildFarm", "P03_WildFarm\P03_WildFarm.csproj", "{4DFB5243-6007-48EA-885E-4EC1F9D3CE39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BCE73431-46D9-420B-A931-612221168CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCE73431-46D9-420B-A931-612221168CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCE73431-46D9-420B-A931-612221168CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DFB5243-6007-48EA-885E-4EC1F9D3CE39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFB5243-6007-48EA-885E-4EC1F9D3CE39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFB5243-6007-48EA-885E-4EC1F9D3CE39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFB5243-6007-48EA-885E-4EC1F9D3CE39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
