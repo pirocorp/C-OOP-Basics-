@@ -14,7 +14,7 @@
         {
             var animals = new List<Animal>();
 
-            var inputAnimalData = string.Empty;
+            string inputAnimalData;
 
             while ((inputAnimalData = Console.ReadLine()) != "End")
             {
@@ -37,7 +37,7 @@
                 animals.Add(currentAnimal);
             }
 
-            animals.ForEach(x => Console.WriteLine(x));
+            animals.ForEach(Console.WriteLine);
         }
 
         private static Food FoodFactory(string inputFoodData)
