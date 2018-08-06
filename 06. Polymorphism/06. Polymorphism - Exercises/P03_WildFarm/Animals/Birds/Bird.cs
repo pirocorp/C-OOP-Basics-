@@ -10,10 +10,10 @@
             this.WingSize = wingSize;
         }
 
-        public double WingSize
+        protected double WingSize
         {
             get => this.wingSize;
-            protected set => this.wingSize = value;
+            set => this.wingSize = value;
         }
 
         public override string ToString()

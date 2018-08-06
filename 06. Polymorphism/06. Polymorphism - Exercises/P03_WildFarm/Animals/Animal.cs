@@ -14,16 +14,16 @@
             this.Weight = weight;
         }
 
-        public string Name
+        protected string Name
         {
             get => this.name;
-            protected set => this.name = value;
+            set => this.name = value;
         }
 
-        public double Weight
+        protected double Weight
         {
             get => this.weight;
-            protected set => this.weight = value;
+            set => this.weight = value;
         }
 
         protected int FoodEaten

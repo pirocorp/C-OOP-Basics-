@@ -10,7 +10,7 @@
             this.breed = breed;
         }
 
-        public string Breed
+        protected string Breed
         {
             get => this.breed;
             set => this.breed = value;

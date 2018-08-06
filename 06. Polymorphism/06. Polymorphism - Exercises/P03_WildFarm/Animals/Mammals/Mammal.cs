@@ -10,10 +10,10 @@
             this.livingRegion = livingRegion;
         }
 
-        public string LivingRegion
+        protected string LivingRegion
         {
             get => this.livingRegion;
-            protected set => this.livingRegion = value;
+            set => this.livingRegion = value;
         }
 
         public override string ToString()
