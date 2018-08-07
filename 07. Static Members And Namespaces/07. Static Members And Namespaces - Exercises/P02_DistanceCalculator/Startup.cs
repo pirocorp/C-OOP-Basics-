@@ -1,7 +1,6 @@
 ﻿namespace P02_DistanceCalculator
 {
     using System;
-    using P02_DistanceCalculator;
 
     public class Startup
     {
