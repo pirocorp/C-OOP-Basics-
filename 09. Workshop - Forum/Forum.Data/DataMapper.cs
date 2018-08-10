@@ -67,7 +67,7 @@
 
             foreach (var line in dataLines)
             {
-                var args = line.Split(";", StringSplitOptions.RemoveEmptyEntries);
+                var args = line.Split(";");
                 var id = int.Parse(args[0]);
                 var name = args[1];
                 var postIds = args[2]
@@ -105,7 +105,7 @@
 
             foreach (var line in dataLines)
             {
-                var args = line.Split(";", StringSplitOptions.RemoveEmptyEntries);
+                var args = line.Split(";");
                 var id = int.Parse(args[0]);
                 var username = args[1];
                 var password = args[2];
@@ -144,7 +144,7 @@
 
             foreach (var line in dataLines)
             {
-                var args = line.Split(";", StringSplitOptions.RemoveEmptyEntries);
+                var args = line.Split(";");
                 var id = int.Parse(args[0]);
                 var title = args[1];
                 var content = args[2];

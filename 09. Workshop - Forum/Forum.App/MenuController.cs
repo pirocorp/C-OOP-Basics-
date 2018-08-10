@@ -146,12 +146,18 @@
 
         private void LogOut()
         {
-            throw new NotImplementedException();
+            this.Username = string.Empty;
+            this.LogInUser();
+            this.RenderCurrentView();
         }
 
         private void SuccessfulLogin()
         {
-            throw new NotImplementedException();
+            var loginControler = (IReadUserInfoController)this.CurrentController;
+            this.Username = loginControler.Username;
+
+            this.LogInUser();
+            this.RedirectToMenu(MenuState.Main);
         }
 
         private void ViewPost()
@@ -190,12 +196,24 @@
 
         private void LogInUser()
         {
-            throw new NotImplementedException();
+            foreach (var controler in this.controllers)
+            {
+                if (controler is IUserRestrictedController userRestrictedController)
+                {
+                    userRestrictedController.UserLogIn();
+                }
+            }
         }
 
         private void LogOutUser()
         {
-            throw new NotImplementedException();
+            foreach (var controler in this.controllers)
+            {
+                if (controler is IUserRestrictedController userRestrictedController)
+                {
+                    userRestrictedController.UserLogOut();
+                }
+            }
         }
     }
 }

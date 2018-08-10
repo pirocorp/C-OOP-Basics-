@@ -1,7 +1,5 @@
 ﻿namespace Forum.App.Services
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
     using Controllers;
     using Data;

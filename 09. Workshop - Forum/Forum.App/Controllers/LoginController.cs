@@ -2,6 +2,7 @@
 {
     using Forum.App.Controllers.Contracts;
     using Forum.App.UserInterface.Contracts;
+    using Services;
     using UserInterface;
     using Views;
 
@@ -44,7 +45,14 @@
                     this.ReadPassword();
                     return MenuState.Login;
                 case Command.LogIn:
-                    //TODO Try log user
+                    var loggedIn = UserService.TryLoginUser(this.Username, this.Password);
+
+                    if (loggedIn)
+                    {
+                        return MenuState.SuccessfulLogIn;
+                    }
+
+                    this.Error = true;
                     return MenuState.Error;
                 case Command.Back:
                     this.ResetLogin();

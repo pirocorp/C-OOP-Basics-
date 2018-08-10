@@ -3,6 +3,7 @@
 	using Forum.App;
 	using Forum.App.Controllers.Contracts;
 	using Forum.App.UserInterface.Contracts;
+	using Services;
 	using UserInterface;
 
     public class SignUpController : IController, IReadUserInfoController
@@ -49,8 +50,21 @@
                     this.ReadPassword();
                     return MenuState.Signup;
                 case Command.SignUp:
-                    //TODO Try signup
-                    return MenuState.Error;
+                    var signUp = UserService.TrySignUpUser(this.Username, this.Password);
+
+                    switch (signUp)
+                    {
+                        case SignUpStatus.Success:
+                            return MenuState.SuccessfulLogIn;
+                        case SignUpStatus.DetailsError:
+                            this.ErrorMessage = DETAILS_ERROR;
+                            return MenuState.Error;
+                        case SignUpStatus.UsernameTakenError:
+                            this.ErrorMessage = USERNAME_TAKEN_ERROR;
+                            return MenuState.Error;
+                    }
+
+                    break;
                 case Command.Back:
                     this.ResetSignUp();
                     return MenuState.Back;
