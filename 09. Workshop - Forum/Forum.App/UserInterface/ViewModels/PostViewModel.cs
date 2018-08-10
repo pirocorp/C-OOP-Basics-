@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class PostViewModel
     {
@@ -14,7 +15,18 @@
 
         private IList<string> GetLines(string content)
         {
-            throw new NotImplementedException();
+            var contentChars = content.ToCharArray();
+
+            var lines = new List<string>();
+
+            for (var i = 0; i < content.Length; i += LINE_LENGHT)
+            {
+                var rowChars = contentChars.Skip(i).Take(LINE_LENGHT).ToArray();
+                var row = new string(rowChars);
+                lines.Add(row);
+            }
+
+            return lines;
         }
 
         public int PostId { get; set; }
