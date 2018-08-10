@@ -65,5 +65,56 @@
 
             return postViewModel;
         }
+
+        private static Category EnsureCategory(PostViewModel postView, ForumData forumData)
+        {
+            var categoryName = postView.Category;
+            var category = forumData.Categories.FirstOrDefault(x => x.Name == categoryName);
+
+            if (category == null)
+            {
+                var categories = forumData.Categories;
+                var categoryId = categories.Any() ? categories.Last().Id + 1: 1;
+                category = new Category(categoryId, categoryName, new List<int>());
+                forumData.Categories.Add(category);
+            }
+
+            return category;
+        }
+
+        public static bool TrySavePost(PostViewModel postView)
+        {
+            var emptyCategory = string.IsNullOrWhiteSpace(postView.Category);
+            var emptyTitle = string.IsNullOrWhiteSpace(postView.Title);
+            var emptyContent = !postView.Content.Any();
+
+            if (emptyCategory || emptyTitle || emptyContent)
+            {
+                return false;
+            }
+
+            var forumData = new ForumData();
+            var category = EnsureCategory(postView, forumData);
+
+            var posts = forumData.Posts;
+            var postId = posts.Any() ? posts.Last().Id + 1 : 1;
+
+            var author = UserService.GetUser(postView.Author);
+
+            var authorId = author.Id;
+            var content = string.Join(string.Empty, postView.Content);
+
+            var post = new Post(postId, postView.Title, content, category.Id, authorId, new List<int>());
+
+            forumData.Posts.Add(post);
+            author.PostIds.Add(post.Id);
+            category.PostsIds.Add(post.Id);
+
+            forumData.SaveChanges();
+
+            postView.PostId = postId;
+
+            return true;
+        }
     }
 }
