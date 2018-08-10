@@ -30,7 +30,7 @@
 
         private string[] PostTitles { get; set; }
 
-        private int LastPage => this.PostTitles.Length / PAGE_OFFSET + 1;
+        private int LastPage => this.PostTitles.Length / 11;
 
         private bool IsFirstPage => this.CurrentPage == 0;
 
