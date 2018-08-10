@@ -147,7 +147,7 @@
         private void LogOut()
         {
             this.Username = string.Empty;
-            this.LogInUser();
+            this.LogOutUser();
             this.RenderCurrentView();
         }
 
