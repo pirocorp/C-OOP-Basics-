@@ -45,5 +45,14 @@
 
             return allCategoryNames;
         }
+
+        public static IEnumerable<Post> GetPostsByCategory(int categoryId)
+        {
+            var forumData = new ForumData();
+            var postIds = forumData.Categories.First(c => c.Id == categoryId).PostsIds;
+            var posts = forumData.Posts.Where(p => postIds.Contains(p.Id));
+
+            return posts;
+        }
     }
 }
