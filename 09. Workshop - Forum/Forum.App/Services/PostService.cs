@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using Data;
     using Models;
@@ -32,6 +33,17 @@
             }
 
             return replies;
+        }
+
+        internal static string[] GetAllGategoryNames()
+        {
+            var forumData = new ForumData();
+
+            var allCategoryNames = forumData.Categories
+                .Select(c => c.Name)
+                .ToArray();
+
+            return allCategoryNames;
         }
     }
 }
