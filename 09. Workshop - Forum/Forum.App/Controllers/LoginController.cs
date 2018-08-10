@@ -2,6 +2,8 @@
 {
     using Forum.App.Controllers.Contracts;
     using Forum.App.UserInterface.Contracts;
+    using UserInterface;
+    using Views;
 
     public class LogInController : IController, IReadUserInfoController
     {
@@ -33,22 +35,40 @@
 
         public MenuState ExecuteCommand(int index)
         {
-            throw new System.NotImplementedException();
+            switch ((Command)index)
+            {
+                case Command.ReadUsername:
+                    this.ReadUsername();
+                    return MenuState.Login;
+                case Command.ReadPassword:
+                    this.ReadPassword();
+                    return MenuState.Login;
+                case Command.LogIn:
+                    //TODO Try log user
+                    return MenuState.Error;
+                case Command.Back:
+                    this.ResetLogin();
+                    return MenuState.Back;
+            }
+
+            throw new System.InvalidOperationException();
         }
 
         public IView GetView(string userName)
         {
-            throw new System.NotImplementedException();
+            return new LogInView(this.Error, this.Username, this.Password.Length);
         }
 
         public void ReadPassword()
         {
-            throw new System.NotImplementedException();
+            this.Password = ForumViewEngine.ReadRow();
+            ForumViewEngine.HideCursor();
         }
 
         public void ReadUsername()
         {
-            throw new System.NotImplementedException();
+            this.Username = ForumViewEngine.ReadRow();
+            ForumViewEngine.HideCursor();
         }
     }
 }
