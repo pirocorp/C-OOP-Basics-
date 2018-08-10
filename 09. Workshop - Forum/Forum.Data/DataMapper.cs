@@ -114,8 +114,8 @@
                     .Select(int.Parse)
                     .ToArray();
 
-                var category = new User(id, username, password, postIds);
-                users.Add(category);
+                var user = new User(id, username, password, postIds);
+                users.Add(user);
             }
 
             return users;
@@ -135,6 +135,47 @@
             }
 
             WriteLines(config["users"], lines.ToArray());
+        }
+
+        public static List<Post> LoadPosts()
+        {
+            var posts = new List<Post>();
+            var dataLines = ReadLines(config["posts"]);
+
+            foreach (var line in dataLines)
+            {
+                var args = line.Split(";", StringSplitOptions.RemoveEmptyEntries);
+                var id = int.Parse(args[0]);
+                var title = args[1];
+                var content = args[2];
+                var categoryId = int.Parse(args[3]);
+                var authorId = int.Parse(args[4]);
+                var replayIds = args[5]
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToArray();
+
+                var post = new Post(id, title, content, categoryId, authorId, replayIds);
+                posts.Add(post);
+            }
+
+            return posts;
+        }
+
+        public static void SavePosts(ICollection<Post> posts)
+        {
+            var lines = new List<string>();
+
+            foreach (var post in posts)
+            {
+                const string categoryFormat = "{0};{1};{2};{3}{4}{5}";
+
+                var line = string.Format(categoryFormat, post.Id, post.Title, post.Content, post.CategoryId, post.AuthorId, string.Join(",", post.ReplayIds));
+
+                lines.Add(line);
+            }
+
+            WriteLines(config["posts"], lines.ToArray());
         }
     }
 }
