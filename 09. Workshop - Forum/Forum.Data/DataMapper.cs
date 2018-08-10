@@ -97,5 +97,44 @@
 
             WriteLines(config["categories"], lines.ToArray());
         }
+
+        public static List<User> LoadUsers()
+        {
+            var users = new List<User>();
+            var dataLines = ReadLines(config["users"]);
+
+            foreach (var line in dataLines)
+            {
+                var args = line.Split(";", StringSplitOptions.RemoveEmptyEntries);
+                var id = int.Parse(args[0]);
+                var username = args[1];
+                var password = args[2];
+                var postIds = args[3]
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToArray();
+
+                var category = new User(id, username, password, postIds);
+                users.Add(category);
+            }
+
+            return users;
+        }
+
+        public static void SaveUsers(ICollection<User> users)
+        {
+            var lines = new List<string>();
+
+            foreach (var user in users)
+            {
+                const string categoryFormat = "{0};{1};{2};{3}";
+
+                var line = string.Format(categoryFormat, user.Id, user.Username, user.Password, string.Join(",", user.PostIds));
+
+                lines.Add(line);
+            }
+
+            WriteLines(config["users"], lines.ToArray());
+        }
     }
 }
