@@ -10,7 +10,25 @@
         public const int PAGE_OFFSET = 10;
         private const int COMMAND_COUNT = PAGE_OFFSET + 3;
 
-        public int CurrentPage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private enum Command
+        {
+            Back = 0,
+            ViewPost = 1,
+            PreviousPage = 11,
+            NextPage = 12,
+        }
+
+        public int CurrentPage{ get; set; }
+
+        private string[] AllCategoryNames { get; set; }
+
+        private string[] CurrentPageCategories { get; set; }
+
+        private int LastPage => this.AllCategoryNames.Length / (PAGE_OFFSET + 1);
+
+        private bool IsFirstPage => this.CurrentPage == 0;
+
+        private bool IsLastPage => this.CurrentPage == this.LastPage;
 
         public MenuState ExecuteCommand(int index)
         {
