@@ -6,7 +6,15 @@
 
     public class PostDetailsController : IController, IUserRestrictedController
     {
-        public bool LoggedInUser => throw new System.NotImplementedException();
+        public bool LoggedInUser { get; set; }
+
+        public int PostId { get; private set; }
+
+        private enum Command
+        {
+            Back,
+            AddReplay
+        }
 
         public MenuState ExecuteCommand(int index)
         {
