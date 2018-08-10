@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Models;
+    using Services;
 
     public class PostViewModel
     {
@@ -10,7 +12,17 @@
 
         public PostViewModel()
         {
-            throw new NotImplementedException();
+            this.Content = new List<string>();
+        }
+
+        public PostViewModel(Post post)
+        {
+            this.PostId = post.Id;
+            this.Title = post.Title;
+            this.Content = this.GetLines(post.Content);
+            this.Author = UserService.GetUser(post.AuthorId).Username;
+            this.Category = PostService.GetCategory(post.CategoryId).Name;
+            this.Replies = PostService.GetPostReplies(post.Id);
         }
 
         private IList<string> GetLines(string content)

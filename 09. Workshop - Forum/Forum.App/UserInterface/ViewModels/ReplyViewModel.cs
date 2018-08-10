@@ -3,14 +3,17 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Models;
+    using Services;
 
     public class ReplyViewModel
     {
         private const int LINE_LENGHT = 37;
 
-        public ReplyViewModel()
+        public ReplyViewModel(Replay replay)
         {
-            throw new NotImplementedException();
+            this.Author = UserService.GetUser(replay.AuthorId).Username;
+            this.Content = this.GetLines(replay.Content);
         }
 
         public string Author { get; set; }
