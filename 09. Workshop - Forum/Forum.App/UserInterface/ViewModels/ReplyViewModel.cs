@@ -10,7 +10,12 @@
     {
         private const int LINE_LENGHT = 37;
 
-        public ReplyViewModel(Replay replay)
+        public ReplyViewModel()
+        {
+            this.Content = new List<string>();
+        }
+
+        public ReplyViewModel(Reply replay)
         {
             this.Author = UserService.GetUser(replay.AuthorId).Username;
             this.Content = this.GetLines(replay.Content);

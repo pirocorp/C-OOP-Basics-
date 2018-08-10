@@ -26,7 +26,7 @@
 
             var replies = new List<ReplyViewModel>();
 
-            foreach (var replayId in post.ReplayIds)
+            foreach (var replayId in post.ReplyIds)
             {
                 var replay = forumData.Replies.Find(r => r.Id == replayId);
                 replies.Add(new ReplyViewModel(replay));
@@ -114,6 +114,29 @@
 
             postView.PostId = postId;
 
+            return true;
+        }
+
+        public static bool TrySaveReply(ReplyViewModel replyView, int postId)
+        {
+            if (!replyView.Content.Any())
+            {
+                return false;
+            }
+
+            ForumData forumData = new ForumData();
+            var replies = forumData.Replies;
+            int replyId = replies.Any() ? replies.Last().Id + 1 : 1;
+            Post post = forumData.Posts.First(p => p.Id == postId);
+            User author = UserService.GetUser(replyView.Author);
+            int authorId = author.Id;
+
+            string content = String.Join("", replyView.Content);
+            Reply reply = new Reply(replyId, content, authorId, postId);
+
+            forumData.Replies.Add(reply);
+            post.ReplyIds.Add(replyId);
+            forumData.SaveChanges();
             return true;
         }
     }

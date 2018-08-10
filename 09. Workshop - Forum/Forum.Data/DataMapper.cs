@@ -170,7 +170,7 @@
             {
                 const string categoryFormat = "{0};{1};{2};{3};{4};{5}";
 
-                var line = string.Format(categoryFormat, post.Id, post.Title, post.Content, post.CategoryId, post.AuthorId, string.Join(",", post.ReplayIds));
+                var line = string.Format(categoryFormat, post.Id, post.Title, post.Content, post.CategoryId, post.AuthorId, string.Join(",", post.ReplyIds));
 
                 lines.Add(line);
             }
@@ -178,9 +178,9 @@
             WriteLines(config["posts"], lines.ToArray());
         }
 
-        public static List<Replay> LoadReplies()
+        public static List<Reply> LoadReplies()
         {
-            var replies = new List<Replay>();
+            var replies = new List<Reply>();
             var dataLines = ReadLines(config["replies"]);
 
             foreach (var line in dataLines)
@@ -191,14 +191,14 @@
                 var authorId = int.Parse(args[2]);
                 var postId = int.Parse(args[3]);
 
-                var replay = new Replay(id, content, authorId, postId);
+                var replay = new Reply(id, content, authorId, postId);
                 replies.Add(replay);
             }
 
             return replies;
         }
 
-        public static void SaveReplies(ICollection<Replay> replies)
+        public static void SaveReplies(ICollection<Reply> replies)
         {
             var lines = new List<string>();
 

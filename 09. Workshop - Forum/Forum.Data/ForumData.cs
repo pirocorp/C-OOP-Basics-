@@ -13,7 +13,7 @@
 
         public List<Post> Posts { get; set; }
 
-        public List<Replay> Replies { get; set; }
+        public List<Reply> Replies { get; set; }
 
         public ForumData()
         {

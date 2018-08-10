@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
     
-    public class Replay
+    public class Reply
     {
         public int Id { get; set; }
 
@@ -14,7 +14,7 @@
 
         public int PostId { get; set; }
 
-        public Replay(int id, string content, int authorId, int postId)
+        public Reply(int id, string content, int authorId, int postId)
         {
             this.Id = id;
             this.Content = content;
