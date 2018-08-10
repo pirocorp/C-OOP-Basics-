@@ -7,6 +7,7 @@
     using Forum.App.Controllers.Contracts;
     using Forum.App.UserInterface;
     using Forum.App.UserInterface.Contracts;
+    using Services;
 
     internal class MenuController
     {
@@ -162,7 +163,19 @@
 
         private void ViewPost()
         {
-            throw new NotImplementedException();
+            var categoryController = (CategoryController) this.CurrentController;
+
+            var categoryId = categoryController.CategoryId;
+
+            var posts = PostService.GetPostsByCategory(categoryId).ToArray();
+
+            var postIndex = categoryController.CurrentPage * CategoryController.PAGE_OFFSET + this.currentOptionIndex;
+            var postId = posts[postIndex - 1].Id;
+
+            var postController = (PostDetailsController) this.controllers[(int) MenuState.ViewPost];
+            postController.SetPostId(postId);
+
+            this.RedirectToMenu(MenuState.ViewPost);
         }
 
         private void OpenCategory()

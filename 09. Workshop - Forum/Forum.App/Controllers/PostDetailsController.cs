@@ -1,7 +1,11 @@
 ﻿namespace Forum.App.Controllers
 {
+    using System;
     using Forum.App.Controllers.Contracts;
     using Forum.App.UserInterface.Contracts;
+    using Services;
+    using UserInterface;
+    using Views;
 
 
     public class PostDetailsController : IController, IUserRestrictedController
@@ -18,22 +22,37 @@
 
         public MenuState ExecuteCommand(int index)
         {
-            throw new System.NotImplementedException();
+            switch ((Command)index)
+            {
+                case Command.Back:
+                    ForumViewEngine.ResetBuffer();
+                    return MenuState.Back;
+                case Command.AddReplay:
+                    return MenuState.AddReplyToPost;
+            }
+
+            throw new InvalidOperationException();
         }
 
         public IView GetView(string userName)
         {
-            throw new System.NotImplementedException();
+            var postViewModel = PostService.GetPostViewModel(this.PostId);
+            return new PostDetailsView(postViewModel, this.LoggedInUser);
         }
 
         public void UserLogIn()
         {
-            throw new System.NotImplementedException();
+            this.LoggedInUser = true;
         }
 
         public void UserLogOut()
         {
-            throw new System.NotImplementedException();
+            this.LoggedInUser = false;
+        }
+
+        public void SetPostId(int postId)
+        {
+            this.PostId = postId;
         }
     }
 }

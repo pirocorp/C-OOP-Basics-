@@ -54,5 +54,16 @@
 
             return posts;
         }
+
+        public static PostViewModel GetPostViewModel(int postId)
+        {
+            var forumData = new ForumData();
+
+            var post = forumData.Posts.Find(p => p.Id == postId);
+
+            var postViewModel = new PostViewModel(post);
+
+            return postViewModel;
+        }
     }
 }
