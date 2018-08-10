@@ -14,6 +14,11 @@
 
         public ICollection<int> PostIds { get; set; }
 
+        public User(int id, string username, string password) 
+            : this(id, username, password, new List<int>())
+        {
+        }
+
         public User(int id, string username, string password, ICollection<int> postIds)
         {
             this.Id = id;
