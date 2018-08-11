@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
-    public static class RepositoryFilters
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class RepositoryFilter
     {
-        public static void FilterAndTake(Dictionary<string, List<int>> wantedData, string wantedFilters, int studentsToTake)
+        public void FilterAndTake(Dictionary<string, List<int>> wantedData, string wantedFilters, int studentsToTake)
         {
             if (wantedFilters == "excellent")
             {
@@ -26,7 +26,7 @@ namespace BashSoft
             }
         }
 
-        private static void FilterAndTake(Dictionary<string, List<int>> wantedData, Predicate<double> givenFilter, int studentsToTake)
+        private void FilterAndTake(Dictionary<string, List<int>> wantedData, Predicate<double> givenFilter, int studentsToTake)
         {
             var counter = 0;
             foreach (var username_score in wantedData)
