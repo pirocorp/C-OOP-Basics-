@@ -37,5 +37,7 @@
         public static string NotEnrolledInCourse = "Student must be enrolled in a course before you set his mark.";
 
         public static string InvalidNumberOfScores = "The number of scores for the given course is greater than the possible.";
+
+        public static string InvalidScore = "The number for the score you\'ve entered is not in the range of 0 - 100";
     }
 }
