@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
-    class RepositorySorters
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class RepositorySorter
     {
-        public static void OrderAndTake(Dictionary<string, List<int>> wantedData, string comparison, int studentsToTake)
+        public void OrderAndTake(Dictionary<string, List<int>> wantedData, string comparison, int studentsToTake)
         {
             comparison = comparison.ToLower();
             if (comparison == "ascending")
@@ -28,7 +28,7 @@ namespace BashSoft
             }
         }
 
-        public static void PrintStudents(Dictionary<string, List<int>> studentsSorted)
+        public void PrintStudents(Dictionary<string, List<int>> studentsSorted)
         {
             foreach (var kv in studentsSorted)
             {

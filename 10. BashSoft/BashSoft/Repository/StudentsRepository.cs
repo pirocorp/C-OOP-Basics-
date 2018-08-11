@@ -28,7 +28,7 @@ namespace BashSoft
                     studentsToTake = studentsByCourse[courseName].Count;
                 }
 
-                RepositorySorters.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
+                RepositorySorter.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
             }
         }
         public static bool isDataInilized = false;
