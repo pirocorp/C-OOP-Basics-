@@ -52,7 +52,7 @@
     <Compile Include="Repository\RepositoryFilter.cs" />
     <Compile Include="Repository\RepositorySorter.cs" />
     <Compile Include="Static data\SessionData.cs" />
-    <Compile Include="Repository\StudentsRepository.cs" />
+    <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="Judge\Tester.cs" />
   </ItemGroup>
   <ItemGroup>

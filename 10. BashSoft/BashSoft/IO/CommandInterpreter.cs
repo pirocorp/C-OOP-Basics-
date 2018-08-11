@@ -76,7 +76,7 @@ namespace BashSoft
             {
                 if (takeQuantity == "all")
                 {
-                    StudentsRepository.OrderAndTake(courseName, comparison, null);
+                    StudentRepository.OrderAndTake(courseName, comparison, null);
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace BashSoft
                     var hasParsed = int.TryParse(takeQuantity, out studentsToTake);
                     if (hasParsed)
                     {
-                        StudentsRepository.OrderAndTake(courseName, comparison, studentsToTake);
+                        StudentRepository.OrderAndTake(courseName, comparison, studentsToTake);
                     }
                     else
                     {
@@ -119,7 +119,7 @@ namespace BashSoft
             {
                 if (takeQuantity == "all")
                 {
-                    StudentsRepository.FilterAndTake(courseName, filter, null);
+                    StudentRepository.FilterAndTake(courseName, filter, null);
                 }
                 else
                 {
@@ -127,7 +127,7 @@ namespace BashSoft
                     var hasParsed = int.TryParse(takeQuantity, out studentsToTake);
                     if (hasParsed)
                     {
-                        StudentsRepository.FilterAndTake(courseName, filter, studentsToTake);
+                        StudentRepository.FilterAndTake(courseName, filter, studentsToTake);
                     }
                     else
                     {
@@ -146,13 +146,13 @@ namespace BashSoft
             if (data.Length == 2)
             {
                 var course = data[1];
-                StudentsRepository.GetAllStudentsFromCourse(course);
+                StudentRepository.GetAllStudentsFromCourse(course);
             }
             else if (data.Length == 3)
             {
                 var course = data[1];
                 var username = data[2];
-                StudentsRepository.GetStudentScoresFromCourse(course, username);
+                StudentRepository.GetStudentScoresFromCourse(course, username);
             }
             else
             {
@@ -188,7 +188,7 @@ namespace BashSoft
             }
 
             var databasePath = data[1];
-            StudentsRepository.InitilizeData(databasePath);
+            StudentRepository.LoadData(databasePath);
         }
 
         private static void TryChangePathRelatively(string input, string[] data)
