@@ -27,7 +27,7 @@
                     studentsToTake = studentsByCourse[courseName].Count;
                 }
 
-                RepositoryFilter.FilterAndTake(studentsByCourse[courseName], givenFilter, studentsToTake.Value);
+                this.filter.FilterAndTake(studentsByCourse[courseName], givenFilter, studentsToTake.Value);
             }
         }
 
@@ -40,7 +40,7 @@
                     studentsToTake = studentsByCourse[courseName].Count;
                 }
 
-                RepositorySorter.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
+                this.sorter.OrderAndTake(studentsByCourse[courseName], comparison, studentsToTake.Value);
             }
         }
         
