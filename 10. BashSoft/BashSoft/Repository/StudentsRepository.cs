@@ -51,12 +51,12 @@ namespace BashSoft
 
         private static void ReadData(string fileName)
         {
-            string path = SessionData.currentPath + "\\" + fileName;
+            var path = SessionData.currentPath + "\\" + fileName;
             if (File.Exists(path))
             {
                 var rgx = new Regex(@"([A-Z][A-Za-z+#]*_[A-Z][a-z]{2}_201[4-9])\s+([A-Z][a-z]{0,3}\d{2}_\d{2,4})\s+(\d{1,3})");
                 var allInputLines = File.ReadAllLines(path);
-                for (int i = 0; i < allInputLines.Length; i++)
+                for (var i = 0; i < allInputLines.Length; i++)
                 {
                     if (!string.IsNullOrEmpty(allInputLines[i]) && rgx.IsMatch(allInputLines[i]))
                     {

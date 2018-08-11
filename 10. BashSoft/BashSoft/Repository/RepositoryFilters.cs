@@ -31,7 +31,7 @@ namespace BashSoft
 
         private static void FilterAndTake(Dictionary<string, List<int>> wantedData, Predicate<double> givenFilter, int studentsToTake)
         {
-            int counter = 0;
+            var counter = 0;
             foreach (var username_score in wantedData)
             {
                 if (counter == studentsToTake)

@@ -12,7 +12,7 @@ namespace BashSoft
         public static void StartReadingCommands()
         {
             OutputWriter.WriteMessage($"{SessionData.currentPath}" + "> ");
-            string input = Console.ReadLine().Trim();
+            var input = Console.ReadLine().Trim();
 
             while (input != endCommand)
             {

@@ -12,14 +12,14 @@ namespace BashSoft
         public static void TraverseDirectory(int depth)
         {
             OutputWriter.WriteEmptyLine();
-            int initialIdentation = SessionData.currentPath.Split('\\').Length;
-            Queue<string> subFolders = new Queue<string>();
+            var initialIdentation = SessionData.currentPath.Split('\\').Length;
+            var subFolders = new Queue<string>();
             subFolders.Enqueue(SessionData.currentPath);
 
             while (subFolders.Count != 0)
             {
-                string currentPath = subFolders.Dequeue();
-                int identation = currentPath.Split('\\').Length - initialIdentation;
+                var currentPath = subFolders.Dequeue();
+                var identation = currentPath.Split('\\').Length - initialIdentation;
 
                 if (depth - identation < 0)
                 {
@@ -37,8 +37,8 @@ namespace BashSoft
 
                     foreach (var file in Directory.GetFiles(SessionData.currentPath))
                     {
-                        int indexOfLastSlash = file.LastIndexOf("\\");
-                        string fileName = file.Substring(indexOfLastSlash);
+                        var indexOfLastSlash = file.LastIndexOf("\\");
+                        var fileName = file.Substring(indexOfLastSlash);
                         OutputWriter.WriteMessageOnNewLine(new string('-', indexOfLastSlash) + fileName);
                     }
                 }
@@ -51,7 +51,7 @@ namespace BashSoft
 
         public static void CreateDirectoryInCurrentFolder(string name)
         {
-            string path = SessionData.currentPath + "\\" + name;
+            var path = SessionData.currentPath + "\\" + name;
             try
             {
                 Directory.CreateDirectory(path);
@@ -68,9 +68,9 @@ namespace BashSoft
             {
                 try
                 {
-                    string currentPath = SessionData.currentPath;
-                    int indexOfLastSlash = currentPath.LastIndexOf("\\");
-                    string newPath = currentPath.Substring(0, indexOfLastSlash);
+                    var currentPath = SessionData.currentPath;
+                    var indexOfLastSlash = currentPath.LastIndexOf("\\");
+                    var newPath = currentPath.Substring(0, indexOfLastSlash);
                     SessionData.currentPath = newPath;
                 }
                 catch (ArgumentOutOfRangeException)
@@ -80,7 +80,7 @@ namespace BashSoft
             }
             else
             {
-                string currenPath = SessionData.currentPath;
+                var currenPath = SessionData.currentPath;
                 currenPath += "\\" + relativePath;
                 SessionData.currentPath = currenPath;
             }
