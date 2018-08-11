@@ -6,19 +6,19 @@
 
     public class RepositoryFilter
     {
-        public void FilterAndTake(Dictionary<string, List<int>> wantedData, string wantedFilters, int studentsToTake)
+        public void FilterAndTake(Dictionary<string, double> studentsWithMarks, string wantedFilters, int studentsToTake)
         {
             if (wantedFilters == "excellent")
             {
-               FilterAndTake(wantedData, x => x >= 5, studentsToTake); 
+               FilterAndTake(studentsWithMarks, x => x >= 5, studentsToTake); 
             }
             else if (wantedFilters == "average")
             {
-                FilterAndTake(wantedData, x => x >= 3.5 && x < 5, studentsToTake);
+                FilterAndTake(studentsWithMarks, x => x >= 3.5 && x < 5, studentsToTake);
             }
             else if (wantedFilters == "poor")
             {
-                FilterAndTake(wantedData, x => x < 3.5, studentsToTake);
+                FilterAndTake(studentsWithMarks, x => x < 3.5, studentsToTake);
             }
             else
             {
@@ -26,38 +26,21 @@
             }
         }
 
-        private void FilterAndTake(Dictionary<string, List<int>> wantedData, Predicate<double> givenFilter, int studentsToTake)
+        private void FilterAndTake(Dictionary<string, double> studentsWithMarks, Predicate<double> givenFilter, int studentsToTake)
         {
-            var counter = 0;
-            foreach (var username_score in wantedData)
+            var takenCounter = 0;
+
+            foreach (var studentMark in studentsWithMarks)
             {
-                if (counter == studentsToTake)
+                if (takenCounter == studentsToTake)
                     break;
 
-                var avrScore = username_score.Value.Average();
-                var percentageOfFullfillments = avrScore / 100;
-                var mark = percentageOfFullfillments * 4 + 2;
-
-                if (givenFilter(mark))
+                if (givenFilter(studentMark.Value))
                 {
-                    OutputWriter.PrintStudent(username_score);
-                    counter++;
+                    OutputWriter.PrintStudent(studentMark);
+                    takenCounter++;
                 }
             }
         }
-
-        //private static double Average(List<int> scoresOnTasks)
-        //{
-        //    int totalScore = 0;
-        //    foreach (var score in scoresOnTasks)
-        //    {
-        //        totalScore += score;
-        //    }
-
-        //    var percentageOfAll = totalScore / (scoresOnTasks.Count * 100);
-        //    var mark = percentageOfAll * 4 + 2;
-
-        //    return mark;
-        //}
     }
 }
