@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace BashSoft
+﻿namespace BashSoft.IO
 {
+    using System;
+
     public static class InputReader
     {
         private const string endCommand = "quit";
