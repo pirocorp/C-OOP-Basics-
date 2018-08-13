@@ -30,7 +30,7 @@
                     studentsToTake = this.courses[courseName].studentsByName.Count;
                 }
 
-                var marks = this.courses[courseName].studentsByName.ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                var marks = this.courses[courseName].studentsByName.ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.filter.FilterAndTake(marks, givenFilter, studentsToTake.Value);
             }
@@ -45,7 +45,7 @@
                     studentsToTake = this.courses[courseName].studentsByName.Count;
                 }
 
-                var marks = this.courses[courseName].studentsByName.ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                var marks = this.courses[courseName].studentsByName.ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.sorter.OrderAndTake(marks, comparison, studentsToTake.Value);
             }
@@ -185,7 +185,7 @@
 
         public void GetStudentScoresFromCourse(string courseName, string username)
         {
-            OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.courses[courseName].studentsByName[username].marksByCourseName[courseName]));
+            OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.courses[courseName].studentsByName[username].MarksByCourseName[courseName]));
         }
 
         public void GetAllStudentsFromCourse(string courseName)
