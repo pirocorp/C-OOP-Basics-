@@ -51,6 +51,7 @@
     <Compile Include="Exceptions\NotANumberException.cs" />
     <Compile Include="IO\CommandInterpreter.cs" />
     <Compile Include="IO\Commands\Command.cs" />
+    <Compile Include="IO\Commands\CompareFilesCommand.cs" />
     <Compile Include="IO\Commands\GetHelpCommand.cs" />
     <Compile Include="IO\Commands\MakeDirectoryCommand.cs" />
     <Compile Include="IO\Commands\OpenFileCommand.cs" />

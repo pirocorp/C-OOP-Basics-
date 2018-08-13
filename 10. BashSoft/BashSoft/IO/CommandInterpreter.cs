@@ -1,8 +1,6 @@
 ﻿namespace BashSoft.IO
 {
     using System;
-    using System.Diagnostics;
-    using System.IO;
     using Commands;
     using Exceptions;
     using Judge;
@@ -49,8 +47,7 @@
                 case "ls":
                     return new TraverseFoldersCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cmp":
-                    this.TryCompareFiles(input, data);
-                    break;
+                    return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cdrel":
                     this.TryChangePathRelatively(input, data);
                     break;
