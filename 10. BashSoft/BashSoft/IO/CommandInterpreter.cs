@@ -1,5 +1,6 @@
 ﻿namespace BashSoft.IO
 {
+    using System;
     using System.Diagnostics;
 
     public class CommandInterpreter
@@ -19,6 +20,21 @@
         {
             var data = input.Split();
             var command = data[0];
+            command = command.ToLower();
+
+            try
+            {
+                this.ParseCommand(input, command, data);
+
+            }
+            catch (ArgumentException e)
+            {
+                OutputWriter.DisplayException(e.Message);
+            }
+        }
+
+        private void ParseCommand(string input, string command, string[] data)
+        {
             switch (command)
             {
                 case "open":
@@ -33,13 +49,13 @@
                 case "cmp":
                     this.TryCompareFiles(input, data);
                     break;
-                case "cdRel":
+                case "cdrel":
                     this.TryChangePathRelatively(input, data);
                     break;
-                case "cdAbs":
+                case "cdabs":
                     this.TryChangePathAbsolute(input, data);
                     break;
-                case "readDb":
+                case "readdb":
                     this.TryReadDatabaseFromFile(input, data);
                     break;
                 case "help":
@@ -51,11 +67,11 @@
                 case "order":
                     this.TryOrderAndTake(input, data);
                     break;
-                case "decOrder":
+                case "decorder":
                     break;
                 case "download":
                     break;
-                case "downloadAsynch":
+                case "downloadasynch":
                     break;
                 case "show":
                     this.TryShowWantedData(input, data);
