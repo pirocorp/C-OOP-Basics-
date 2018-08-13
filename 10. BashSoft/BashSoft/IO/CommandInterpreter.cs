@@ -53,8 +53,7 @@
                 case "cdabs":
                     return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "readdb":
-                    this.TryReadDatabaseFromFile(input, data);
-                    break;
+                    return new ReadDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "help":
                     return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "show":
@@ -185,18 +184,6 @@
             {
                 this.DisplayInvalidCommandMessage(input);
             }
-        }
-
-        private void TryReadDatabaseFromFile(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 2))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            var databasePath = data[1];
-            this.repository.LoadData(databasePath);
         }
 
         private bool IsDataValid(string[] data, int neededLength)
