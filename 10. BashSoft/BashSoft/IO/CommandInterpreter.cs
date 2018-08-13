@@ -32,6 +32,10 @@
             {
                 OutputWriter.DisplayException(dnfe.Message);
             }
+            catch (ArgumentNullException ane)
+            {
+                OutputWriter.DisplayException(ane.Message);
+            }
             catch (ArgumentOutOfRangeException aoore)
             {
                 OutputWriter.DisplayException(aoore.Message);
