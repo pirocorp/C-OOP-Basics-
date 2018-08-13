@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Exceptions;
     using Static_data;
 
     public class Student
@@ -25,7 +26,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException(nameof(this.UserName), ExceptionMessages.NullOrEmptyValue);
+                    throw new InvalidStringException();
                 }
 
                 this.userName = value;
@@ -40,7 +41,7 @@
         {
             if (this.enrolledCourses.ContainsKey(course.Name))
             {
-                throw new ArgumentException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, this.userName, course.Name));
+                throw new DuplicateEntryInStructureException(this.UserName, course.Name);
             }
 
             this.enrolledCourses.Add(course.Name, course);
@@ -50,7 +51,7 @@
         {
             if (!this.enrolledCourses.ContainsKey(courseName))
             {
-                throw new ArgumentException(ExceptionMessages.NotEnrolledInCourse);
+                throw new CourseNotFoundException();
             }
 
             if (scores.Length > Course.NumberOfTasksOnExam)
