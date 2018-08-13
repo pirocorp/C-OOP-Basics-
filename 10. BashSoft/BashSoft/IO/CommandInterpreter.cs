@@ -59,8 +59,7 @@
                 case "show":
                     return new ShowCourseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "filter":
-                    this.TryFilterAndTake(input, data);
-                    break;
+                    return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "order":
                     this.TryOrderAndTake(input, data);
                     break;
