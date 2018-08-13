@@ -63,8 +63,7 @@
                 case "order":
                     return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "dropdb":
-                    this.TryDropDb(input, data);
-                    break;
+                    return new DropDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 //case "decorder":
                 //    break;
                 //case "download":
@@ -74,18 +73,6 @@
                 default:
                     throw new InvalidCommandException(input);
             }
-        }
-
-        private void TryDropDb(string input, string[] data)
-        {
-            if (data.Length != 1)
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            this.repository.UnloadData();
-            OutputWriter.WriteMessageOnNewLine("Database dropped!");
         }
     }
 }
