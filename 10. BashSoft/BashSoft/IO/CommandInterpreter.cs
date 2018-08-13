@@ -40,6 +40,10 @@
             {
                 OutputWriter.DisplayException(ae.Message);
             }
+            catch (IOException ioe)
+            {
+                OutputWriter.DisplayException(ioe.Message);
+            }
             catch (Exception e)
             {
                 OutputWriter.DisplayException(e.Message);

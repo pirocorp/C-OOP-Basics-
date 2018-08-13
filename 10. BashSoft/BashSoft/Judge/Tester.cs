@@ -23,9 +23,9 @@
                 PrintOutput(mismatches, hasMismatch, mismatchesPath);
                 OutputWriter.WriteMessageOnNewLine("Files read!");
             }
-            catch (FileNotFoundException)
+            catch (IOException)
             {
-                OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
+                throw new IOException(ExceptionMessages.InvalidPath);
             }
         }
 
@@ -76,14 +76,7 @@
                 {
                     OutputWriter.WriteMessageOnNewLine(line);
                 }
-                try
-                {
 
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
-                }
                 File.WriteAllLines(mismatchesPath, mismatches);
                 return;
             }
