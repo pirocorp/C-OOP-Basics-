@@ -49,8 +49,7 @@
                 case "cmp":
                     return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cdrel":
-                    this.TryChangePathRelatively(input, data);
-                    break;
+                    return new ChangeRelativePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cdabs":
                     this.TryChangePathAbsolute(input, data);
                     break;
@@ -201,18 +200,6 @@
             this.repository.LoadData(databasePath);
         }
 
-        private void TryChangePathRelatively(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 2))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            var relPath = data[1];
-            this.inputOutputManager.ChangeCurrentDirectoryRelative(relPath);
-        }
-
         private void TryChangePathAbsolute(string input, string[] data)
         {
             if (!this.IsDataValid(data, 2))
@@ -223,17 +210,6 @@
             
             var absPath = data[1];
             this.inputOutputManager.ChangeCurrentDirectoryAbsolute(absPath);
-        }
-
-        private void TryCompareFiles(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 3))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            this.judge.CompareContent(data[1], data[2]);
         }
 
         private bool IsDataValid(string[] data, int neededLength)

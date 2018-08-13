@@ -50,6 +50,7 @@
     <Compile Include="Exceptions\InvalidStringException.cs" />
     <Compile Include="Exceptions\NotANumberException.cs" />
     <Compile Include="IO\CommandInterpreter.cs" />
+    <Compile Include="IO\Commands\ChangeRelativePathCommand.cs" />
     <Compile Include="IO\Commands\Command.cs" />
     <Compile Include="IO\Commands\CompareFilesCommand.cs" />
     <Compile Include="IO\Commands\GetHelpCommand.cs" />
