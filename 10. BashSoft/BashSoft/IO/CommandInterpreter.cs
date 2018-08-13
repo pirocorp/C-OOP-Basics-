@@ -51,8 +51,7 @@
                 case "cdrel":
                     return new ChangeRelativePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cdabs":
-                    this.TryChangePathAbsolute(input, data);
-                    break;
+                    return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "readdb":
                     this.TryReadDatabaseFromFile(input, data);
                     break;
@@ -198,18 +197,6 @@
 
             var databasePath = data[1];
             this.repository.LoadData(databasePath);
-        }
-
-        private void TryChangePathAbsolute(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 2))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-            
-            var absPath = data[1];
-            this.inputOutputManager.ChangeCurrentDirectoryAbsolute(absPath);
         }
 
         private bool IsDataValid(string[] data, int neededLength)
