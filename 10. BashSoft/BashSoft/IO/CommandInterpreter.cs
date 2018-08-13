@@ -32,6 +32,22 @@
                 this.ParseCommand(input, command, data);
 
             }
+            catch (InvalidCommandException ice)
+            {
+                OutputWriter.DisplayException(ice.Message);
+            }
+            catch (CourseNotFoundException cnfe)
+            {
+                OutputWriter.DisplayException(cnfe.Message);
+            }
+            catch (DuplicateEntryInStructureException deise)
+            {
+                OutputWriter.DisplayException(deise.Message);
+            }
+            catch (InvalidStringException ise)
+            {
+                OutputWriter.DisplayException(ise.Message);
+            }
             catch (InvalidFileNameException ifne)
             {
                 OutputWriter.DisplayException(ifne.Message);
@@ -59,6 +75,10 @@
             catch (IOException ioe)
             {
                 OutputWriter.DisplayException(ioe.Message);
+            }
+            catch (NullReferenceException nre)
+            {
+                OutputWriter.DisplayException(nre.Message);
             }
             catch (Exception e)
             {
@@ -346,7 +366,7 @@
 
         private void DisplayInvalidCommandMessage(string input)
         {
-            OutputWriter.WriteMessageOnNewLine($"The command {input} is invalid!");
+            throw new InvalidCommandException(input);
         }
 
         private void TryDropDb(string input, string[] data)
