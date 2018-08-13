@@ -61,8 +61,7 @@
                 case "filter":
                     return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "order":
-                    this.TryOrderAndTake(input, data);
-                    break;
+                    return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "dropdb":
                     this.TryDropDb(input, data);
                     break;
@@ -75,105 +74,6 @@
                 default:
                     throw new InvalidCommandException(input);
             }
-        }
-
-        private void TryOrderAndTake(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 5))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            var courseName = data[1];
-            var comparison = data[2].ToLower();
-            var takeCommand = data[3].ToLower();
-            var takeQuantity = data[4].ToLower();
-
-            this.TryParseParametersForOrderAndTake(takeCommand, takeQuantity, courseName, comparison);
-        }
-
-        private void TryParseParametersForOrderAndTake(string takeCommand, string takeQuantity, string courseName, string comparison)
-        {
-            if (takeCommand == "take")
-            {
-                if (takeQuantity == "all")
-                {
-                    this.repository.OrderAndTake(courseName, comparison, null);
-                }
-                else
-                {
-                    var hasParsed = int.TryParse(takeQuantity, out var studentsToTake);
-
-                    if (hasParsed)
-                    {
-                        this.repository.OrderAndTake(courseName, comparison, studentsToTake);
-                    }
-                    else
-                    {
-                        OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidTakeQueryParamter);
-                    }
-                }
-            }
-            else
-            {
-                OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidTakeQueryParamter);
-            }
-        }
-
-        private void TryFilterAndTake(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 5))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            var courseName = data[1];
-            var filter = data[2].ToLower();
-            var takeCommand = data[3].ToLower();
-            var takeQuantity = data[4].ToLower();
-
-            this.TryParseParametersForFilterAndTake(takeCommand, takeQuantity, courseName, filter);
-        }
-
-        private void TryParseParametersForFilterAndTake(string takeCommand, string takeQuantity, string courseName, string filter)
-        {
-            if (takeCommand == "take")
-            {
-                if (takeQuantity == "all")
-                {
-                    this.repository.FilterAndTake(courseName, filter, null);
-                }
-                else
-                {
-                    int studentsToTake;
-                    var hasParsed = int.TryParse(takeQuantity, out studentsToTake);
-                    if (hasParsed)
-                    {
-                        this.repository.FilterAndTake(courseName, filter, studentsToTake);
-                    }
-                    else
-                    {
-                        OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidTakeQueryParamter);
-                    }
-                }
-            }
-            else
-            {
-                OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidTakeQueryParamter);
-            }
-        }
-
-        private bool IsDataValid(string[] data, int neededLength)
-        {
-            if (data.Length != neededLength)
-            {
-                this.DisplayInvalidCommandMessage(string.Join(" ", data));
-                return false;
-            }
-            
-            return true;
         }
 
         private void TryDropDb(string input, string[] data)

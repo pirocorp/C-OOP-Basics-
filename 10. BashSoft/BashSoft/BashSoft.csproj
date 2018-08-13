@@ -59,6 +59,7 @@
     <Compile Include="IO\Commands\MakeDirectoryCommand.cs" />
     <Compile Include="IO\Commands\OpenFileCommand.cs" />
     <Compile Include="IO\Commands\PrintFilteredStudentsCommand.cs" />
+    <Compile Include="IO\Commands\PrintOrderedStudentsCommand.cs" />
     <Compile Include="IO\Commands\ReadDatabaseCommand.cs" />
     <Compile Include="IO\Commands\ShowCourseCommand.cs" />
     <Compile Include="IO\Commands\TraverseFoldersCommand.cs" />
