@@ -47,8 +47,7 @@
                 case "mkdir":
                     return new MakeDirectoryCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "ls":
-                    this.TryTraverseFolders(input, data);
-                    break;
+                    return new TraverseFoldersCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "cmp":
                     this.TryCompareFiles(input, data);
                     break;
@@ -238,27 +237,6 @@
             }
 
             this.judge.CompareContent(data[1], data[2]);
-        }
-
-        private void TryTraverseFolders(string input, string[] data)
-        {
-            if (data.Length < 2)
-            {
-                this.inputOutputManager.TraverseDirectory(0);
-            }
-            else
-            {
-                int depth;
-                var success = int.TryParse(data[1], out depth);
-                if (success)
-                {
-                    this.inputOutputManager.TraverseDirectory(depth);
-                }
-                else
-                {
-                    OutputWriter.WriteMessageOnNewLine(ExceptionMessages.UnableToParseNumber);
-                }
-            }
         }
 
         private bool IsDataValid(string[] data, int neededLength)
