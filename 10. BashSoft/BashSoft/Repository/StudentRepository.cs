@@ -57,7 +57,7 @@
         {
             if (this.isDataInilized)
             {
-                throw new ArgumentNullException(ExceptionMessages.DataAlreadyInitialisedException);
+                throw new ArgumentException(ExceptionMessages.DataAlreadyInitialisedException);
             }
 
             this.students = new Dictionary<string, Student>();
@@ -130,7 +130,7 @@
             }
             else
             {
-                throw new ArgumentNullException(ExceptionMessages.InvalidPath);
+                throw new ArgumentException(ExceptionMessages.InvalidPath);
             }
 
             this.isDataInilized = true;
@@ -141,7 +141,7 @@
         {
             if (!this.isDataInilized)
             {
-                throw new ArgumentNullException(ExceptionMessages.DataNotInitializedExceptionMessage);
+                throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             this.students = null;
