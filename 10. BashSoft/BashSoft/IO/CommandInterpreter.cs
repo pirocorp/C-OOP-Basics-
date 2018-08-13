@@ -341,17 +341,17 @@
             this.inputOutputManager.CreateDirectoryInCurrentFolder(folderName);
         }
 
-        private void TryOpenFile(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 2))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
+        //private void TryOpenFile(string input, string[] data)
+        //{
+        //    if (!this.IsDataValid(data, 2))
+        //    {
+        //        this.DisplayInvalidCommandMessage(input);
+        //        return;
+        //    }
 
-            var filename = data[1];
-            Process.Start(SessionData.CurrentPath + "\\" + filename);
-        }
+        //    var filename = data[1];
+        //    Process.Start(SessionData.CurrentPath + "\\" + filename);
+        //}
 
         private bool IsDataValid(string[] data, int neededLength)
         {
