@@ -37,13 +37,13 @@
 
         public void EnrollInCourse(Course course)
         {
-            if (this.enrolledCourses.ContainsKey(course.name))
+            if (this.enrolledCourses.ContainsKey(course.Name))
             {
-                OutputWriter.DisplayException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, this.userName, course.name));
+                OutputWriter.DisplayException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, this.userName, course.Name));
                 return;
             }
 
-            this.enrolledCourses.Add(course.name, course);
+            this.enrolledCourses.Add(course.Name, course);
         }
 
         public void SetMarksInCourse(string courseName, params int[] scores)
