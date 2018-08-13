@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.IO;
 
     public class CommandInterpreter
     {
@@ -27,10 +28,23 @@
                 this.ParseCommand(input, command, data);
 
             }
-            catch (ArgumentException e)
+            catch (DirectoryNotFoundException dnfe)
+            {
+                OutputWriter.DisplayException(dnfe.Message);
+            }
+            catch (ArgumentOutOfRangeException aoore)
+            {
+                OutputWriter.DisplayException(aoore.Message);
+            }
+            catch (ArgumentException ae)
+            {
+                OutputWriter.DisplayException(ae.Message);
+            }
+            catch (Exception e)
             {
                 OutputWriter.DisplayException(e.Message);
             }
+
         }
 
         private void ParseCommand(string input, string command, string[] data)
