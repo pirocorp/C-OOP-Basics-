@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using Commands;
     using Exceptions;
     using Judge;
     using Repository;
@@ -24,76 +25,25 @@
         public void InterpredCommand(string input)
         {
             var data = input.Split();
-            var command = data[0];
-            command = command.ToLower();
+            var commandName = data[0].ToLower();
 
             try
             {
-                this.ParseCommand(input, command, data);
-
+                var command = this.ParseCommand(input, commandName, data);
+                command.Execute();
             }
-            catch (InvalidCommandException ice)
+            catch (Exception ex)
             {
-                OutputWriter.DisplayException(ice.Message);
+                OutputWriter.DisplayException(ex.Message);
             }
-            catch (CourseNotFoundException cnfe)
-            {
-                OutputWriter.DisplayException(cnfe.Message);
-            }
-            catch (DuplicateEntryInStructureException deise)
-            {
-                OutputWriter.DisplayException(deise.Message);
-            }
-            catch (InvalidStringException ise)
-            {
-                OutputWriter.DisplayException(ise.Message);
-            }
-            catch (InvalidFileNameException ifne)
-            {
-                OutputWriter.DisplayException(ifne.Message);
-            }
-            catch (InvalidPathException ipe)
-            {
-                OutputWriter.DisplayException(ipe.Message);
-            }
-            catch (DirectoryNotFoundException dnfe)
-            {
-                OutputWriter.DisplayException(dnfe.Message);
-            }
-            catch (ArgumentNullException ane)
-            {
-                OutputWriter.DisplayException(ane.Message);
-            }
-            catch (ArgumentOutOfRangeException aoore)
-            {
-                OutputWriter.DisplayException(aoore.Message);
-            }
-            catch (ArgumentException ae)
-            {
-                OutputWriter.DisplayException(ae.Message);
-            }
-            catch (IOException ioe)
-            {
-                OutputWriter.DisplayException(ioe.Message);
-            }
-            catch (NullReferenceException nre)
-            {
-                OutputWriter.DisplayException(nre.Message);
-            }
-            catch (Exception e)
-            {
-                OutputWriter.DisplayException(e.Message);
-            }
-
         }
 
-        private void ParseCommand(string input, string command, string[] data)
+        private Command ParseCommand(string input, string command, string[] data)
         {
             switch (command)
             {
                 case "open":
-                    this.TryOpenFile(input, data);
-                    break;
+                    return new OpenFileCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "mkdir":
                     this.TryCreateDirectory(input, data);
                     break;
@@ -115,11 +65,17 @@
                 case "help":
                     this.TryGetHelp(input, data);
                     break;
+                case "show":
+                    this.TryShowWantedData(input, data);
+                    break;
                 case "filter":
                     this.TryFilterAndTake(input, data);
                     break;
                 case "order":
                     this.TryOrderAndTake(input, data);
+                    break;
+                case "dropdb":
+                    this.TryDropDb(input, data);
                     break;
                 case "decorder":
                     break;
@@ -127,12 +83,8 @@
                     break;
                 case "downloadasynch":
                     break;
-                case "show":
-                    this.TryShowWantedData(input, data);
-                    break;
                 default:
-                    this.DisplayInvalidCommandMessage(input);
-                    break;
+                    throw new InvalidCommandException(input);
             }
         }
 
@@ -341,18 +293,6 @@
             this.inputOutputManager.CreateDirectoryInCurrentFolder(folderName);
         }
 
-        //private void TryOpenFile(string input, string[] data)
-        //{
-        //    if (!this.IsDataValid(data, 2))
-        //    {
-        //        this.DisplayInvalidCommandMessage(input);
-        //        return;
-        //    }
-
-        //    var filename = data[1];
-        //    Process.Start(SessionData.CurrentPath + "\\" + filename);
-        //}
-
         private bool IsDataValid(string[] data, int neededLength)
         {
             if (data.Length != neededLength)
@@ -362,11 +302,6 @@
             }
             
             return true;
-        }
-
-        private void DisplayInvalidCommandMessage(string input)
-        {
-            throw new InvalidCommandException(input);
         }
 
         private void TryDropDb(string input, string[] data)
