@@ -23,7 +23,7 @@
             }
             else
             {
-                throw new ArgumentNullException(ExceptionMessages.InvalidStudentFilter);
+                throw new ArgumentException(ExceptionMessages.InvalidStudentFilter);
             }
         }
 

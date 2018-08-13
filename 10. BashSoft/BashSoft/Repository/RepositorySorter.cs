@@ -27,7 +27,7 @@
             }
             else
             {
-                throw new ArgumentNullException(ExceptionMessages.InvalidQueryComparison);
+                throw new ArgumentException(ExceptionMessages.InvalidQueryComparison);
             }
         }
 
