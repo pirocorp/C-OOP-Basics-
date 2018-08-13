@@ -45,8 +45,7 @@
                 case "open":
                     return new OpenFileCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "mkdir":
-                    this.TryCreateDirectory(input, data);
-                    break;
+                    return new MakeDirectoryCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "ls":
                     this.TryTraverseFolders(input, data);
                     break;
@@ -77,12 +76,12 @@
                 case "dropdb":
                     this.TryDropDb(input, data);
                     break;
-                case "decorder":
-                    break;
-                case "download":
-                    break;
-                case "downloadasynch":
-                    break;
+                //case "decorder":
+                //    break;
+                //case "download":
+                //    break;
+                //case "downloadasynch":
+                //    break;
                 default:
                     throw new InvalidCommandException(input);
             }
@@ -279,18 +278,6 @@
                     OutputWriter.WriteMessageOnNewLine(ExceptionMessages.UnableToParseNumber);
                 }
             }
-        }
-
-        private void TryCreateDirectory(string input, string[] data)
-        {
-            if (!this.IsDataValid(data, 2))
-            {
-                this.DisplayInvalidCommandMessage(input);
-                return;
-            }
-
-            var folderName = data[1];
-            this.inputOutputManager.CreateDirectoryInCurrentFolder(folderName);
         }
 
         private bool IsDataValid(string[] data, int neededLength)
