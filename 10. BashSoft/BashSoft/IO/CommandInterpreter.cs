@@ -57,8 +57,7 @@
                 case "help":
                     return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "show":
-                    this.TryShowWantedData(input, data);
-                    break;
+                    return new ShowCourseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "filter":
                     this.TryFilterAndTake(input, data);
                     break;
@@ -164,25 +163,6 @@
             else
             {
                 OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidTakeQueryParamter);
-            }
-        }
-
-        private void TryShowWantedData(string input, string[] data)
-        {
-            if (data.Length == 2)
-            {
-                var course = data[1];
-                this.repository.GetAllStudentsFromCourse(course);
-            }
-            else if (data.Length == 3)
-            {
-                var course = data[1];
-                var username = data[2];
-                this.repository.GetStudentScoresFromCourse(course, username);
-            }
-            else
-            {
-                this.DisplayInvalidCommandMessage(input);
             }
         }
 
