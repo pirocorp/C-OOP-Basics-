@@ -1,7 +1,9 @@
-﻿namespace BashSoft
+﻿namespace BashSoft.Judge
 {
     using System;
     using System.IO;
+    using IO;
+    using Static_data;
 
     public class Tester
     {
@@ -11,16 +13,16 @@
             {
                 OutputWriter.WriteMessageOnNewLine("Reading files...");
 
-                var mismatchesPath = GetMismatchPath(expectedOutputPath);
+                var mismatchesPath = this.GetMismatchPath(expectedOutputPath);
 
                 var actualOutputLines = File.ReadAllLines(userOutputPath);
                 var expectedOutputLines = File.ReadAllLines(expectedOutputPath);
 
                 bool hasMismatch;
                 var mismatches =
-                    GetLinesWithPossibleMismatches(actualOutputLines, expectedOutputLines, out hasMismatch);
+                    this.GetLinesWithPossibleMismatches(actualOutputLines, expectedOutputLines, out hasMismatch);
 
-                PrintOutput(mismatches, hasMismatch, mismatchesPath);
+                this.PrintOutput(mismatches, hasMismatch, mismatchesPath);
                 OutputWriter.WriteMessageOnNewLine("Files read!");
             }
             catch (IOException)

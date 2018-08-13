@@ -3,6 +3,9 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using Judge;
+    using Repository;
+    using Static_data;
 
     public class CommandInterpreter
     {

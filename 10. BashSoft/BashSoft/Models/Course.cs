@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Static_data;
 
     public class Course
     {
