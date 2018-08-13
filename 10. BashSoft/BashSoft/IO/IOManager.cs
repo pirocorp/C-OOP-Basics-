@@ -3,16 +3,17 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using Exceptions;
     using Static_data;
 
-    public class IOManager
+    public class IoManager
     {
         public void TraverseDirectory(int depth)
         {
             OutputWriter.WriteEmptyLine();
-            var initialIdentation = SessionData.currentPath.Split('\\').Length;
+            var initialIdentation = SessionData.CurrentPath.Split('\\').Length;
             var subFolders = new Queue<string>();
-            subFolders.Enqueue(SessionData.currentPath);
+            subFolders.Enqueue(SessionData.CurrentPath);
 
             while (subFolders.Count != 0)
             {
@@ -33,7 +34,7 @@
 
                     OutputWriter.WriteMessageOnNewLine(string.Format("{0}{1}", new string('-', identation), currentPath));
 
-                    foreach (var file in Directory.GetFiles(SessionData.currentPath))
+                    foreach (var file in Directory.GetFiles(SessionData.CurrentPath))
                     {
                         var indexOfLastSlash = file.LastIndexOf("\\");
                         var fileName = file.Substring(indexOfLastSlash);
@@ -49,14 +50,14 @@
 
         public void CreateDirectoryInCurrentFolder(string name)
         {
-            var path = SessionData.currentPath + "\\" + name;
+            var path = SessionData.CurrentPath + "\\" + name;
             try
             {
                 Directory.CreateDirectory(path);
             }
             catch (ArgumentException)
             {
-                throw new ArgumentException(ExceptionMessages.ForbiddenSymbolsContainedInName);
+                throw new InvalidFileNameException();
             }
         }
 
@@ -66,21 +67,21 @@
             {
                 try
                 {
-                    var currentPath = SessionData.currentPath;
+                    var currentPath = SessionData.CurrentPath;
                     var indexOfLastSlash = currentPath.LastIndexOf("\\");
                     var newPath = currentPath.Substring(0, indexOfLastSlash);
-                    SessionData.currentPath = newPath;
+                    SessionData.CurrentPath = newPath;
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    throw new ArgumentOutOfRangeException("indexOfLastSlash", ExceptionMessages.UnableToGoHigherInParitionHierarchy);
+                    throw new InvalidPathException();
                 }
             }
             else
             {
-                var currenPath = SessionData.currentPath;
+                var currenPath = SessionData.CurrentPath;
                 currenPath += "\\" + relativePath;
-                SessionData.currentPath = currenPath;
+                SessionData.CurrentPath = currenPath;
             }
         }
 
@@ -88,10 +89,10 @@
         {
             if (!Directory.Exists(absolutePath))
             {
-                throw new DirectoryNotFoundException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
 
-            SessionData.currentPath = absolutePath;
+            SessionData.CurrentPath = absolutePath;
         }
     }
 }

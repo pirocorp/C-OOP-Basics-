@@ -5,6 +5,7 @@
     using System.IO;
     using System.Linq;
     using System.Text.RegularExpressions;
+    using Exceptions;
     using IO;
     using Models;
     using Static_data;
@@ -13,7 +14,7 @@
     {
         private Dictionary<string, Student> students;
         private Dictionary<string, Course> courses;
-        public bool isDataInilized;
+        public bool IsDataInilized;
         private RepositoryFilter filter;
         private RepositorySorter sorter;
 
@@ -55,7 +56,7 @@
         
         public void LoadData(string fileName)
         {
-            if (this.isDataInilized)
+            if (this.IsDataInilized)
             {
                 throw new ArgumentException(ExceptionMessages.DataAlreadyInitialisedException);
             }
@@ -68,7 +69,7 @@
 
         private void ReadData(string fileName)
         {
-            var path = SessionData.currentPath + "\\" + fileName;
+            var path = SessionData.CurrentPath + "\\" + fileName;
 
             if (File.Exists(path))
             {
@@ -130,28 +131,28 @@
             }
             else
             {
-                throw new ArgumentException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
 
-            this.isDataInilized = true;
+            this.IsDataInilized = true;
             OutputWriter.WriteMessageOnNewLine("Data read!");
         }
 
         public void UnloadData()
         {
-            if (!this.isDataInilized)
+            if (!this.IsDataInilized)
             {
                 throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             this.students = null;
             this.courses = null;
-            this.isDataInilized = false;
+            this.IsDataInilized = false;
         }
 
         private bool IsQueryForCoursePossible(string courseName)
         {
-            if (this.isDataInilized)
+            if (this.IsDataInilized)
             {
                 if (this.courses.ContainsKey(courseName))
                 {

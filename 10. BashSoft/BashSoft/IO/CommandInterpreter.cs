@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using Exceptions;
     using Judge;
     using Repository;
     using Static_data;
@@ -11,9 +12,9 @@
     {
         private Tester judge;
         private StudentRepository repository;
-        private IOManager inputOutputManager;
+        private IoManager inputOutputManager;
 
-        public CommandInterpreter(Tester judge, StudentRepository repository, IOManager inputOutputManager)
+        public CommandInterpreter(Tester judge, StudentRepository repository, IoManager inputOutputManager)
         {
             this.judge = judge;
             this.repository = repository;
@@ -30,6 +31,14 @@
             {
                 this.ParseCommand(input, command, data);
 
+            }
+            catch (InvalidFileNameException ifne)
+            {
+                OutputWriter.DisplayException(ifne.Message);
+            }
+            catch (InvalidPathException ipe)
+            {
+                OutputWriter.DisplayException(ipe.Message);
             }
             catch (DirectoryNotFoundException dnfe)
             {
@@ -321,7 +330,7 @@
             }
 
             var filename = data[1];
-            Process.Start(SessionData.currentPath + "\\" + filename);
+            Process.Start(SessionData.CurrentPath + "\\" + filename);
         }
 
         private bool IsDataValid(string[] data, int neededLength)

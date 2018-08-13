@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using Exceptions;
     using IO;
     using Static_data;
 
@@ -27,7 +28,7 @@
             }
             catch (IOException)
             {
-                throw new IOException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
         }
 

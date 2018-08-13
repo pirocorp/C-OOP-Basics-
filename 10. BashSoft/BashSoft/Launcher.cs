@@ -9,7 +9,7 @@
         public static void Main()
         {
             var tester = new Tester();
-            var ioManager = new IOManager();
+            var ioManager = new IoManager();
             var repo = new StudentRepository(new RepositoryFilter(), new RepositorySorter());
 
             var currentInterpreter = new CommandInterpreter(tester, repo, ioManager);

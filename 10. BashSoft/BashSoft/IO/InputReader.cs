@@ -5,7 +5,7 @@
 
     public class InputReader
     {
-        private const string endCommand = "quit";
+        private const string END_COMMAND = "quit";
         private CommandInterpreter interpreter;
 
         public InputReader(CommandInterpreter interpreter)
@@ -15,13 +15,13 @@
 
         public void StartReadingCommands()
         {
-            OutputWriter.WriteMessage($"{SessionData.currentPath}" + "> ");
+            OutputWriter.WriteMessage($"{SessionData.CurrentPath}" + "> ");
             var input = Console.ReadLine().Trim();
 
-            while (input != endCommand)
+            while (input != END_COMMAND)
             {
                 this.interpreter.InterpredCommand(input);
-                OutputWriter.WriteMessage($"{SessionData.currentPath}" + "> ");
+                OutputWriter.WriteMessage($"{SessionData.CurrentPath}" + "> ");
                 input = Console.ReadLine().Trim();
             }
         }
