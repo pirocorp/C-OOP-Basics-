@@ -1,21 +1,14 @@
 ﻿using System;
 
-public abstract class Provider : IProvider
+public abstract class Provider : Unit
 {
     private const double MAX_ENERGY_OUTPUT = 10000;
-    private string id;
     private double energyOutput;
 
-    protected Provider(string id, double energyOutput)
+    protected Provider(string id, double energyOutput) 
+        : base(id)
     {
-        this.id = id;
         this.EnergyOutput = energyOutput;
-    }
-
-    public string Id
-    {
-        get => this.id;
-        protected set => this.id = value;
     }
 
     public double EnergyOutput
@@ -33,7 +26,7 @@ public abstract class Provider : IProvider
         return $"Provider - {this.Id}";
     }
 
-    public string Check()
+    public override string Check()
     {
         return this.ToString() + Environment.NewLine +
                $"Energy Output: {this.EnergyOutput}";

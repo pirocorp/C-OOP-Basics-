@@ -5,9 +5,9 @@ using P01_Minedraft.Enums;
 
 public class DraftManager
 {
-    private Dictionary<string, IHarvester> harvesters;
-    private Dictionary<string, IProvider> providers;
-    private Dictionary<string, ICheckable> iCheckable;
+    private Dictionary<string, Harvester> harvesters;
+    private Dictionary<string, Provider> providers;
+    private Dictionary<string, Unit> units;
     private Mode mode;
     private double totalEnergyStored;
     private double totalMinedPlumbusOre;
@@ -16,9 +16,9 @@ public class DraftManager
 
     public DraftManager()
     {
-        this.harvesters = new Dictionary<string, IHarvester>();
-        this.providers = new Dictionary<string, IProvider>();
-        this.iCheckable = new Dictionary<string, ICheckable>();
+        this.harvesters = new Dictionary<string, Harvester>();
+        this.providers = new Dictionary<string, Provider>();
+        this.units = new Dictionary<string, Unit>();
         this.mode = P01_Minedraft.Enums.Mode.Full;
         this.totalEnergyStored = 0;
         this.totalMinedPlumbusOre = 0;
@@ -30,7 +30,7 @@ public class DraftManager
     {
         var id = arguments[1];
 
-        IHarvester currentHarvester = null;
+        Harvester currentHarvester = null;
 
         try
         {
@@ -46,7 +46,7 @@ public class DraftManager
         }
 
         this.harvesters.Add(id, currentHarvester);
-        this.iCheckable.Add(id, currentHarvester);
+        this.units.Add(id, currentHarvester);
         return $"Successfully registered {currentHarvester.ToString()}";
     }
 
@@ -54,7 +54,7 @@ public class DraftManager
     {
         var id = arguments[1];
 
-        IProvider currentProvider = null;
+        Provider currentProvider = null;
 
         try
         {
@@ -70,7 +70,7 @@ public class DraftManager
         }
 
         this.providers.Add(id, currentProvider);
-        this.iCheckable.Add(id, currentProvider);
+        this.units.Add(id, currentProvider);
         return $"Successfully registered {currentProvider.ToString()}";
     }
 
@@ -130,12 +130,11 @@ public class DraftManager
 
     public string Check(List<string> arguments)
     {
-        var result = string.Empty;
         var id = arguments[0];
 
-        if (this.iCheckable.ContainsKey(id))
+        if (this.units.ContainsKey(id))
         {
-            return this.iCheckable[id].Check();
+            return this.units[id].Check();
         }
 
         return $"No element found with id - {id}";
