@@ -5,7 +5,7 @@ public abstract class Provider : Unit
     private const double MAX_ENERGY_OUTPUT = 10000;
     private double energyOutput;
 
-    protected Provider(string id, double energyOutput) 
+    protected Provider(string id, double energyOutput)
         : base(id)
     {
         this.EnergyOutput = energyOutput;

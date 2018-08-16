@@ -1,7 +1,7 @@
-﻿using System;
+﻿using P01_Minedraft.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using P01_Minedraft.Enums;
 
 public class DraftManager
 {
@@ -145,6 +145,5 @@ public class DraftManager
         return $"System Shutdown" + Environment.NewLine +
                $"Total Energy Stored: {this.totalEnergyStored}" + Environment.NewLine +
                $"Total Mined Plumbus Ore: {this.totalMinedPlumbusOre}";
-
     }
 }

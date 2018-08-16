@@ -6,7 +6,7 @@ public abstract class Harvester : Unit
     private double oreOutput;
     private double energyRequirement;
 
-    protected Harvester(string id, double oreOutput, double energyRequirement) 
+    protected Harvester(string id, double oreOutput, double energyRequirement)
         : base(id)
     {
         this.OreOutput = oreOutput;

@@ -18,9 +18,11 @@ public class HarvesterFactory
                 var sonicFactor = int.Parse(arguments[4]);
                 currentHarvester = new SonicHarvester(id, oreOutput, energyRequirement, sonicFactor);
                 break;
+
             case "Hammer":
                 currentHarvester = new HammerHarvester(id, oreOutput, energyRequirement);
                 break;
+
             default:
                 throw new NotSupportedException();
         }

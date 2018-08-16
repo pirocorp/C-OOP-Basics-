@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 public class ProviderFactory
 {
@@ -17,9 +16,11 @@ public class ProviderFactory
             case "Solar":
                 currentProvider = new SolarProvider(id, energyOutput);
                 break;
+
             case "Pressure":
                 currentProvider = new PressureProvider(id, energyOutput);
                 break;
+
             default:
                 throw new NotSupportedException();
         }
