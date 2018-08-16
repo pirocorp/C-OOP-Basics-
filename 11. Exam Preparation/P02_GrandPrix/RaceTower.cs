@@ -9,9 +9,13 @@ public class RaceTower
     private IList<Driver> racingDrivers;
     private Stack<Driver> faileDrivers;
     private Track track;
+    private DriverFactory driverFactory;
+    private TyreFactory tyreFactory;
 
     public RaceTower()
     {
+        this.driverFactory = new DriverFactory();
+        this.tyreFactory = new TyreFactory();
         this.racingDrivers = new List<Driver>();
         this.faileDrivers = new Stack<Driver>();
     }
@@ -34,65 +38,18 @@ public class RaceTower
             var fuelAmount = double.Parse(commandArgs[3]);
 
             var tyreArgs = commandArgs.Skip(4).ToArray();
-            var tyre = this.CreateTyre(tyreArgs);
+            var tyre = this.tyreFactory.CreateTyre(tyreArgs);
 
             var car = new Car(horsePower, fuelAmount, tyre);
 
-            var driver = this.CreateDriver(driverType, driverName, car);
+            var driver = driverFactory.CreateDriver(driverType, driverName, car);
             this.racingDrivers.Add(driver);
         }
         catch
         {
         }
     }
-
-    private Driver CreateDriver(string driverType, string driverName, Car car)
-    {
-        Driver driver = null;
-
-        if (driverType == "Aggressive")
-        {
-            driver = new AggressiveDriver(driverName, car);
-        }
-        else if (driverType == "Endurance")
-        {
-            driver = new EnduranceDriver(driverName, car);
-        }
-
-        if (driver == null)
-        {
-            throw new ArgumentException("Invalid Driver Type");
-        }
-
-        return driver;
-    }
-
-    private Tyre CreateTyre(string[] tyreArgs)
-    {
-        var tyreType = tyreArgs[0];
-        var tyreHardness = double.Parse(tyreArgs[1]);
-
-        Tyre tyre = null;
-
-        if (tyreType == "Hard")
-        {
-            tyre = new HardTyre(tyreHardness);
-        }
-        else if (tyreType == "Ultrasoft")
-        {
-            var grip = double.Parse(tyreArgs[2]);
-
-            tyre = new UltrasoftTyre(tyreHardness, grip);
-        }
-
-        if (tyre == null)
-        {
-            throw new ArgumentException("Invalid Tyre Type");
-        }
-
-        return tyre;
-    }
-
+        
     public void DriverBoxes(List<string> commandArgs)
     {
         var reasonToBox = commandArgs[0];
@@ -107,7 +64,7 @@ public class RaceTower
         }
         else if (reasonToBox == "ChangeTyres")
         {
-            var currentTyre = this.CreateTyre(methodArgs);
+            var currentTyre = this.tyreFactory.CreateTyre(methodArgs);
             currentDriver.ChangeTyres(currentTyre);
         }
     }
