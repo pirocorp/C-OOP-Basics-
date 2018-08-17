@@ -57,7 +57,14 @@ public class Engine
                     break;
                 case "start":
                     raceId = int.Parse(tokens[1]);
-                    Console.WriteLine(carManager.Start(raceId));
+
+                    result = carManager.Start(raceId);
+
+                    if (!string.IsNullOrWhiteSpace(result))
+                    {
+                        Console.WriteLine(result);
+                    }
+
                     break;
                 case "park":
                     carId = int.Parse(tokens[1]);

@@ -76,16 +76,21 @@ public class CarManager
 
     public string Start(int id)
     {
-        var currentRace = this.openRaces[id];
-
-        if (currentRace.Participants.Count > 0)
+        if (this.openRaces.ContainsKey(id))
         {
-            var result = currentRace.RaceResult();
-            this.openRaces.Remove(id);
-            return result;
+            var currentRace = this.openRaces[id];
+
+            if (currentRace.Participants.Count > 0)
+            {
+                var result = currentRace.RaceResult();
+                this.openRaces.Remove(id);
+                return result;
+            }
+
+            return "Cannot start the race with zero participants.";
         }
 
-        return "Cannot start the race with zero participants.";
+        return string.Empty;
     }
 
     public void Park(int id)

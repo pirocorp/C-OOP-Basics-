@@ -65,6 +65,6 @@ public class TimeLimitRace : Race
     {
         return $"{this.Route} - {this.Length}" + Environment.NewLine +
                $"{this.Participants.First().Brand} {this.Participants.First().Model} - {this.TimePerformance} s." + Environment.NewLine +
-               $"{this.EarnedTime()} Time, ${this.CalculatePrizes()[this.EarnedTime()]}.";
+               $"{this.EarnedTime()} Time, ${this.CalculatePrizes()[this.EarnedTime()]}." + Environment.NewLine;
     }
 }
