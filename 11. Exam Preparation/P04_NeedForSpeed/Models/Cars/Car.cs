@@ -40,6 +40,8 @@ public abstract class Car
 
     public int SuspensionPerformance => (this.Suspension + this.Durability);
 
+    public int TimePerformance => (this.HorsePower / 100) * this.Acceleration;
+
     public void StartRace()
     {
         this.inRace.Push(true);
@@ -57,6 +59,11 @@ public abstract class Car
 
         this.HorsePower += horsePowerIncrease;
         this.Suspension += suspensionIncrease;
+    }
+
+    public void Amortization(int amountOfAmortization)
+    {
+        this.Durability -= amountOfAmortization;
     }
 
     public override string ToString()

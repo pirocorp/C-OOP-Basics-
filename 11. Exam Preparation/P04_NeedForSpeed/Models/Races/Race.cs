@@ -23,15 +23,15 @@ public abstract class Race
 
     public IReadOnlyCollection<Car> Participants => this.participants;
 
-    public void AddParticipant(Car newParticipant)
+    protected abstract List<string> FinishingList { get; }
+
+    public virtual void AddParticipant(Car newParticipant)
     {
         this.participants.Add(newParticipant);
         newParticipant.StartRace();
     }
 
-    protected abstract List<string> FinishingList { get; }
-
-    public string RaceResult()
+    public virtual string RaceResult()
     {
         this.ParticipantsCompleteRace();
 
@@ -45,7 +45,7 @@ public abstract class Race
     {
         var sb = new StringBuilder();
 
-        int[] prizes = CalculatePrizes();
+        var prizes = this.CalculatePrizes();
 
         List<string> topParticipants = null;
 

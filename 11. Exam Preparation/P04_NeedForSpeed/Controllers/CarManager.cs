@@ -45,9 +45,9 @@ public class CarManager
         return result;
     }
 
-    public void Open(int id, string type, int length, string route, int prizePool)
+    public void Open(int id, string type, int length, string route, int prizePool, params int[] aditionalParameter)
     {
-        var newRace = this.raceFactory.CreaterRace(type, length, route, prizePool);
+        var newRace = this.raceFactory.CreaterRace(type, length, route, prizePool, aditionalParameter);
 
         this.openRaces[id] = newRace;
     }
@@ -58,9 +58,19 @@ public class CarManager
         {
             var currentCar = this.registeredCars[carId];
 
-            var currentRace = this.openRaces[raceId];
+            if (this.openRaces.ContainsKey(raceId))
+            {
+                var currentRace = this.openRaces[raceId];
 
-            currentRace.AddParticipant(currentCar);
+                try
+                {
+                    currentRace.AddParticipant(currentCar);
+                }
+                catch (ArgumentException)
+                {
+
+                }
+            }
         }
     }
 
@@ -94,9 +104,12 @@ public class CarManager
 
     public void Unpark(int id)
     {
-        var currentCar = this.parkedCars[id];
-        this.parkedCars.Remove(id);
-        this.registeredCars.Add(id, currentCar);
+        if (this.parkedCars.ContainsKey(id))
+        {
+            var currentCar = this.parkedCars[id];
+            this.parkedCars.Remove(id);
+            this.registeredCars.Add(id, currentCar);
+        }
     }
 
     public void Tune(int tuneIndex, string addOn)

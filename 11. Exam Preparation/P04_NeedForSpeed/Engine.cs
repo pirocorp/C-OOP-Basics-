@@ -30,12 +30,7 @@ public class Engine
                 case "check":
                     id = int.Parse(tokens[1]);
                     var result = carManager.Check(id);
-
-                    if (result != string.Empty)
-                    {
-                        Console.WriteLine(result);
-                    }
-                    
+                    Console.WriteLine(result);
                     break;
                 case "open":
                     id = int.Parse(tokens[1]);
@@ -43,7 +38,17 @@ public class Engine
                     var length = int.Parse(tokens[3]);
                     var route = tokens[4];
                     var prizePool = int.Parse(tokens[5]);
-                    carManager.Open(id, type, length, route, prizePool);
+
+                    if (type == "Circuit" || type == "TimeLimit")
+                    {
+                        var aditionalParameter = int.Parse(tokens[6]);
+                        carManager.Open(id, type, length, route, prizePool, aditionalParameter);
+                    }
+                    else
+                    {
+                        carManager.Open(id, type, length, route, prizePool);
+                    }
+
                     break;
                 case "participate":
                     var carId = int.Parse(tokens[1]);
