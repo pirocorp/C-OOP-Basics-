@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_GrandPrix", "P02_GrandP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Avatar", "P03_Avatar\P03_Avatar.csproj", "{D560D244-F5A4-420F-BB2A-7A07ABBB8FDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_NeedForSpeed", "P04_NeedForSpeed\P04_NeedForSpeed.csproj", "{C2C803E1-01D0-43F6-8FAD-E6E39A34837D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D560D244-F5A4-420F-BB2A-7A07ABBB8FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D560D244-F5A4-420F-BB2A-7A07ABBB8FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D560D244-F5A4-420F-BB2A-7A07ABBB8FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C803E1-01D0-43F6-8FAD-E6E39A34837D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C803E1-01D0-43F6-8FAD-E6E39A34837D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C803E1-01D0-43F6-8FAD-E6E39A34837D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C803E1-01D0-43F6-8FAD-E6E39A34837D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
