@@ -41,7 +41,7 @@ public class GenericList<T>
 					"Invalid index: {0}.", index));
 			}
 
-			T result = this.elements[index];
+			var result = this.elements[index];
 
 			return result;
 		}

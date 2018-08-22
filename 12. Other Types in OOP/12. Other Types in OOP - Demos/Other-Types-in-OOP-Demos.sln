@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. DynamicType", "DynamicTy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.2 CustomStackExample", "CustomStackExample\5.2 CustomStackExample.csproj", "{B5B6A062-D196-4F50-A755-FD04C92A2AE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Test", "9. Test\9. Test.csproj", "{033BF055-0B0F-4910-ABA4-9A109C8AB75F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,18 +145,6 @@ Global
 		{B5B6A062-D196-4F50-A755-FD04C92A2AE0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B5B6A062-D196-4F50-A755-FD04C92A2AE0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B5B6A062-D196-4F50-A755-FD04C92A2AE0}.Release|x86.ActiveCfg = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Debug|x86.Build.0 = Debug|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|x86.ActiveCfg = Release|Any CPU
-		{033BF055-0B0F-4910-ABA4-9A109C8AB75F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,8 @@ using System.Linq;
 
 namespace DynamicType
 {
+    using System.Collections;
+
     class Student
     {
         public int Id { get; set; }
@@ -21,23 +23,22 @@ namespace DynamicType
     {
         static void Main(string[] args)
         {
-            Queue<int>
             // using dynamic for classes
             dynamic student = new Student();
             student.Name = "Pesho";
             Console.WriteLine(student.Name);
 
             // using dynamic without having dynamic all over the place
-            int result = Sum<int>(5, 6);
-            decimal decimalResult = Sum<decimal>(15.6M, 16.15M);
-            string text = Sum<string>("pesho", "gosho");
+            var result = Sum<int>(5, 6);
+            var decimalResult = Sum<decimal>(15.6M, 16.15M);
+            var text = Sum<string>("pesho", "gosho");
 
             Console.WriteLine(result);
             Console.WriteLine(text);
             Console.WriteLine(decimalResult);
 
             // using dynamic to compare types
-            int comparing = Compare(5, 6);
+            var comparing = Compare(5, 6);
             // comparing = Compare("pesho", "gosho"); // this causes exception
 
             // using dynamic expanding object

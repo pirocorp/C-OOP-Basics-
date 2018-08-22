@@ -2,14 +2,14 @@
 {
 	static void Main()
 	{
-	    Color c = new Color()
+	    var c = new Color()
 	    {
             RedValue = 1,
             GreenValue = 2,
             BlueValue = 3
 	    };
 
-        Square square = new Square(
+        var square = new Square(
             new Point() { X = 5, Y = -3 },
             7,
             new Color() { RedValue = 73, GreenValue = 158, BlueValue = 76 },
@@ -29,7 +29,7 @@
         // Note: this will not compile (Point is value-type)
         // square.Location.X = square.Location.X + 10;
 
-        Point location = square.Location;
+        var location = square.Location;
         location.X += 10;
         square.Location = location;
 

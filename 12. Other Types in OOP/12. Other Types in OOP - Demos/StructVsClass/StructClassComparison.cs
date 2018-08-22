@@ -8,25 +8,25 @@
 
         static void Main()
         {
-            long initialStructMem = GC.GetTotalMemory(true);
+            var initialStructMem = GC.GetTotalMemory(true);
             var structColors = new ColorStruct[PixelsCount];
-            for (int i = 0; i < structColors.Length; i++)
+            for (var i = 0; i < structColors.Length; i++)
             {
                 structColors[i] = new ColorStruct();
             }
 
-            long postStructMem = GC.GetTotalMemory(true);
+            var postStructMem = GC.GetTotalMemory(true);
             Console.WriteLine("{0} instances of struct: {1}KB",
                 PixelsCount, (postStructMem - initialStructMem) / 1000);
 
-            long initialClassMem = GC.GetTotalMemory(true);
+            var initialClassMem = GC.GetTotalMemory(true);
             var classColors = new ColorClass[PixelsCount];
-            for (int i = 0; i < classColors.Length; i++)
+            for (var i = 0; i < classColors.Length; i++)
             {
                 classColors[i] = new ColorClass();
             }
 
-            long postClassMem = GC.GetTotalMemory(true);
+            var postClassMem = GC.GetTotalMemory(true);
             Console.WriteLine("{0} instances of class: {1}KB", 
                 PixelsCount, (postClassMem - initialClassMem) / 1000);
         }

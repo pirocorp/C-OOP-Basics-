@@ -4,7 +4,7 @@ class EnumExample
 {
 	static void Main()
 	{
-	    DayOfWeek day = DayOfWeek.Wed;
+	    var day = DayOfWeek.Wed;
 
 		Console.WriteLine(day); // Wed
 		

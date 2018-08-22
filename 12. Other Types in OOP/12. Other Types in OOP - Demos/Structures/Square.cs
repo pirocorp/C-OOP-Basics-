@@ -18,7 +18,7 @@
 
 	public override string ToString()
 	{
-		string squareAsString = string.Format(
+		var squareAsString = string.Format(
 			"Square[" + "\n" +
                 "  location({0},{1})," + "\n" +
                 "  size({2})," + "\n" +

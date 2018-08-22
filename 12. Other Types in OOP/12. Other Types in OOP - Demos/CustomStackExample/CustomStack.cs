@@ -44,7 +44,7 @@
                 throw new InvalidOperationException("Stack is empty");
             }
 
-            T topElement = this.elements[this.currentIndex - 1];
+            var topElement = this.elements[this.currentIndex - 1];
             this.elements[this.currentIndex - 1] = default(T);
             this.currentIndex--;
 
@@ -53,7 +53,7 @@
 
         public void Clear()
         {
-            for (int i = 0; i < this.currentIndex; i++)
+            for (var i = 0; i < this.currentIndex; i++)
             {
                 this.elements[i] = default(T);
             }
@@ -63,9 +63,9 @@
 
         public bool Contains(T element)
         {
-            for (int i = 0; i < this.currentIndex; i++)
+            for (var i = 0; i < this.currentIndex; i++)
             {
-                T currentElement = this.elements[i];
+                var currentElement = this.elements[i];
                 if (currentElement.Equals(element))
                 {
                     return true;
@@ -82,10 +82,10 @@
                 throw new InvalidOperationException("Stack is empty");
             }
 
-            T min = this.elements[0];
-            for (int i = 1; i < this.currentIndex; i++)
+            var min = this.elements[0];
+            for (var i = 1; i < this.currentIndex; i++)
             {
-                T currentElement = this.elements[i];
+                var currentElement = this.elements[i];
                 if (currentElement.CompareTo(min) < 0)
                 {
                     min = currentElement;
@@ -97,8 +97,8 @@
 
         private void Resize()
         {
-            T[] newElements = new T[this.elements.Length * 2];
-            for (int i = 0; i < this.elements.Length; i++)
+            var newElements = new T[this.elements.Length * 2];
+            for (var i = 0; i < this.elements.Length; i++)
             {
                 newElements[i] = this.elements[i];
             }
