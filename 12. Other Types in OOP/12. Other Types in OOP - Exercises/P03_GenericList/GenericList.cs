@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
 
+    [Version("1.1")]
     public class GenericList<T> where T : IComparable<T>
     {
         private const int DEFAULTH_CAPAITY = 8;
