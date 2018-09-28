@@ -5,7 +5,7 @@
 
     public static class Extensions
     {
-        public static IEnumerable<T> TakeWhile<T>(this IEnumerable<T> collection, Predicate<T> condition)
+        public static IEnumerable<T> TakeWhile<T>(this IEnumerable<T> collection, Predicate<T> condition) // Func<T, bool>
         {
             var result = new List<T>();
 
