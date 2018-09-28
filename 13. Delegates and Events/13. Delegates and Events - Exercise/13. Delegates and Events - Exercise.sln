@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Func", "P02_Func\P02_Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Action", "P03_Action\P03_Action.csproj", "{87904095-E6A4-4134-8220-5B9B8A4B9D55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_CustomLINQExtensionMethods", "P04_CustomLINQExtensionMethods\P04_CustomLINQExtensionMethods.csproj", "{8FEAA011-608E-4F34-9630-8EA069AE382D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{87904095-E6A4-4134-8220-5B9B8A4B9D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87904095-E6A4-4134-8220-5B9B8A4B9D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87904095-E6A4-4134-8220-5B9B8A4B9D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
