@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Predicates", "P01_Predicates\P01_Predicates.csproj", "{61F973C5-3A70-48B5-974B-1B5C2AA975B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Predicates", "P01_Predicates\P01_Predicates.csproj", "{61F973C5-3A70-48B5-974B-1B5C2AA975B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Func", "P02_Func\P02_Func.csproj", "{7F8785C3-3485-4214-A3BE-92E7447FFEB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_Func", "P02_Func\P02_Func.csproj", "{7F8785C3-3485-4214-A3BE-92E7447FFEB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Action", "P03_Action\P03_Action.csproj", "{87904095-E6A4-4134-8220-5B9B8A4B9D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_Action", "P03_Action\P03_Action.csproj", "{87904095-E6A4-4134-8220-5B9B8A4B9D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_CustomLINQExtensionMethods", "P04_CustomLINQExtensionMethods\P04_CustomLINQExtensionMethods.csproj", "{8FEAA011-608E-4F34-9630-8EA069AE382D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04_CustomLINQExtensionMethods", "P04_CustomLINQExtensionMethods\P04_CustomLINQExtensionMethods.csproj", "{8FEAA011-608E-4F34-9630-8EA069AE382D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_InterestCalculator", "P05_InterestCalculator\P05_InterestCalculator.csproj", "{CBF705B1-39D2-460A-9347-37672ABFC83A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05_InterestCalculator", "P05_InterestCalculator\P05_InterestCalculator.csproj", "{CBF705B1-39D2-460A-9347-37672ABFC83A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_AsynchronousTimer", "P06_AsynchronousTimer\P06_AsynchronousTimer.csproj", "{B56827F7-B47C-4DD4-9967-DD1EDEAFF019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56827F7-B47C-4DD4-9967-DD1EDEAFF019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56827F7-B47C-4DD4-9967-DD1EDEAFF019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56827F7-B47C-4DD4-9967-DD1EDEAFF019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56827F7-B47C-4DD4-9967-DD1EDEAFF019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
