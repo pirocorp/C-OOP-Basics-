@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Action", "P03_Action\P0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_CustomLINQExtensionMethods", "P04_CustomLINQExtensionMethods\P04_CustomLINQExtensionMethods.csproj", "{8FEAA011-608E-4F34-9630-8EA069AE382D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_InterestCalculator", "P05_InterestCalculator\P05_InterestCalculator.csproj", "{CBF705B1-39D2-460A-9347-37672ABFC83A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FEAA011-608E-4F34-9630-8EA069AE382D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF705B1-39D2-460A-9347-37672ABFC83A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
