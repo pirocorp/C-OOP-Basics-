@@ -63,7 +63,7 @@
         {
             var areaComparator = SignOfNumber(this.Area - other.Area);
             var populationComparator = SignOfNumber(this.Population - other.Population);
-            var nameComparator = this.Name.CompareTo(other.Name);
+            var nameComparator = string.Compare(this.Name, other.Name, StringComparison.Ordinal);
 
             if (areaComparator != 0)
             {

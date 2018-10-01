@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Country", "P01_Country\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Customer", "P02_Customer\P02_Customer.csproj", "{AD4E0331-15F0-43AA-BCA1-9443764DDD25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_StringDisperser", "P03_StringDisperser\P03_StringDisperser.csproj", "{4E81677A-CA6D-4AC5-8393-F4058A8A6613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD4E0331-15F0-43AA-BCA1-9443764DDD25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD4E0331-15F0-43AA-BCA1-9443764DDD25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD4E0331-15F0-43AA-BCA1-9443764DDD25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E81677A-CA6D-4AC5-8393-F4058A8A6613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E81677A-CA6D-4AC5-8393-F4058A8A6613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E81677A-CA6D-4AC5-8393-F4058A8A6613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E81677A-CA6D-4AC5-8393-F4058A8A6613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
