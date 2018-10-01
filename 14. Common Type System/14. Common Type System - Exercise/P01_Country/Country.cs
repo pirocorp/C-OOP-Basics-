@@ -131,7 +131,7 @@
         {
             if (ReferenceEquals(firstCountry, null) || ReferenceEquals(secondCountry, null))
             {
-                return false;
+                return true;
             }
 
             return !firstCountry.Equals(secondCountry);
