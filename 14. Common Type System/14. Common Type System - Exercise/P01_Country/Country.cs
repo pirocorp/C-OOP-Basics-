@@ -54,14 +54,9 @@
 
         public IReadOnlyCollection<string> Cities => this.cities;
 
-        public override string ToString()
+        public void AddCity(string city)
         {
-            return $"Name: {this.Name}, Population: {this.Population}, Area: {this.Area}, Cities: [{string.Join(", ", this.Cities)}]";
-        }
-
-        public override int GetHashCode()
-        {
-            return this.Name.GetHashCode();
+            this.cities.Add(city);
         }
 
         public int CompareTo(Country other)
@@ -81,6 +76,28 @@
             }
 
             return nameComparator;
+        }
+
+        object ICloneable.Clone()
+        {
+            return this.Clone();
+        }
+
+        public Country Clone()
+        {
+            var clone = new Country(this.Name, this.Population, this.Area);
+
+            foreach (var city in this.Cities)
+            {
+                clone.cities.Add(city);
+            }
+
+            return clone;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -120,29 +137,12 @@
             return !firstCountry.Equals(secondCountry);
         }
 
-        object ICloneable.Clone()
+        public override string ToString()
         {
-            return this.Clone();
+            return $"Name: {this.Name}, Population: {this.Population}, Area: {this.Area}, Cities: [{string.Join(", ", this.Cities)}]";
         }
 
-        public Country Clone()
-        {
-            var clone = new Country(this.Name, this.Population, this.Area);
-
-            foreach (var city in this.Cities)
-            {
-                clone.cities.Add(city);
-            }
-
-            return clone;
-        }
-
-        public void AddCity(string city)
-        {
-            this.cities.Add(city);
-        }
-
-        private static int SignOfNumber(double number)
+        private static int SignOfNumber (double number)
         {
             if (number > 0)
             {
