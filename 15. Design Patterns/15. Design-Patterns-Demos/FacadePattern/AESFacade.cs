@@ -17,14 +17,14 @@
 
         public byte[] AESEncrypt(byte[] bytesToBeEncrypted, string password)
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
-                using (RijndaelManaged AES = new RijndaelManaged())
+                using (var AES = new RijndaelManaged())
                 {
                     AES.KeySize = 256;
                     AES.BlockSize = 128;
 
-                    byte[] passwordBytes = Encoding.UTF8.GetBytes(password.ToCharArray());
+                    var passwordBytes = Encoding.UTF8.GetBytes(password.ToCharArray());
                     var key = new Rfc2898DeriveBytes(passwordBytes, SaltBytes, DeriveBytesIterations);
                     AES.Key = key.GetBytes(AES.KeySize / 8);
                     AES.IV = key.GetBytes(AES.BlockSize / 8);
@@ -36,7 +36,7 @@
                     {
                         cs.Write(bytesToBeEncrypted, 0, bytesToBeEncrypted.Length);
                     }
-                    byte[] encryptedBytes = ms.ToArray();
+                    var encryptedBytes = ms.ToArray();
                     return encryptedBytes;
                 }
             }
@@ -44,14 +44,14 @@
 
         public byte[] AESDecrypt(byte[] bytesToBeDecrypted, string password)
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
-                using (RijndaelManaged AES = new RijndaelManaged())
+                using (var AES = new RijndaelManaged())
                 {
                     AES.KeySize = 256;
                     AES.BlockSize = 128;
 
-                    byte[] passwordBytes = Encoding.UTF8.GetBytes(password.ToCharArray());
+                    var passwordBytes = Encoding.UTF8.GetBytes(password.ToCharArray());
                     var key = new Rfc2898DeriveBytes(passwordBytes, SaltBytes, DeriveBytesIterations);
                     AES.Key = key.GetBytes(AES.KeySize / 8);
                     AES.IV = key.GetBytes(AES.BlockSize / 8);
@@ -62,7 +62,7 @@
                     {
                         cs.Write(bytesToBeDecrypted, 0, bytesToBeDecrypted.Length);
                     }
-                    byte[] decryptedBytes = ms.ToArray();
+                    var decryptedBytes = ms.ToArray();
                     return decryptedBytes;
                 }
             }
@@ -70,17 +70,17 @@
 
         public string AESEncrypt(string message, string password)
         {
-            byte[] messageBytes = Encoding.UTF8.GetBytes(message.ToCharArray());
-            byte[] encryptedMessageBytes = AESEncrypt(messageBytes, password);
-            string base64EncodedEncryptedMessage = Convert.ToBase64String(encryptedMessageBytes);
+            var messageBytes = Encoding.UTF8.GetBytes(message.ToCharArray());
+            var encryptedMessageBytes = this.AESEncrypt(messageBytes, password);
+            var base64EncodedEncryptedMessage = Convert.ToBase64String(encryptedMessageBytes);
             return base64EncodedEncryptedMessage;
         }
 
         public string AESDecrypt(string base64EncodedEncryptedMessage, string password)
         {
-            byte[] encryptedMessageBytes = Convert.FromBase64String(base64EncodedEncryptedMessage);
-            byte[] decryptedMessageBytes = AESDecrypt(encryptedMessageBytes, password);
-            string message = Encoding.UTF8.GetString(decryptedMessageBytes);
+            var encryptedMessageBytes = Convert.FromBase64String(base64EncodedEncryptedMessage);
+            var decryptedMessageBytes = this.AESDecrypt(encryptedMessageBytes, password);
+            var message = Encoding.UTF8.GetString(decryptedMessageBytes);
             return message;
         }
     }

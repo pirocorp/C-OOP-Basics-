@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Singleton", "Singleton\1. Singleton.csproj", "{22268D43-911A-4783-A539-5BDFDE282777}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Decorator-Pattern", "Dec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Adapter-Pattern", "Adapter\8. Adapter-Pattern.csproj", "{39F79F1F-09E5-44A8-8CB7-7333CE04A1F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Visitor-Pattern", "Visitor\9. Visitor-Pattern.csproj", "{38C02135-FA2C-4688-9DFE-D8656AC8029F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13. Visitor-Pattern", "Visitor\13. Visitor-Pattern.csproj", "{38C02135-FA2C-4688-9DFE-D8656AC8029F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Iterator-Pattern", "Iterator-Pattern\9. Iterator-Pattern.csproj", "{6053EFBA-09C9-4815-8081-5DE832752206}"
 EndProject
@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Template-Method", "Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Observer-Pattern", "Observer-Pattern\11. Observer-Pattern.csproj", "{69AC2558-578F-4143-AF4A-9564FA1F719C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy-Pattern", "Strategy-Pattern\Strategy-Pattern.csproj", "{628CDA81-EA10-4B1E-B949-BE4568927976}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Strategy-Pattern", "Strategy-Pattern\12. Strategy-Pattern.csproj", "{628CDA81-EA10-4B1E-B949-BE4568927976}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,5 +90,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEFC0A49-4C26-4D88-82EE-0FA9B04CD0BD}
 	EndGlobalSection
 EndGlobal

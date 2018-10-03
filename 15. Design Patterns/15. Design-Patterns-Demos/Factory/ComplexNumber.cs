@@ -26,7 +26,7 @@
 
         public override string ToString()
         {
-            return String.Format("Complex({0:F2} + {1:F2}i)", this.Real, this.Imaginary);
+            return $"Complex({this.Real:F2} + {this.Imaginary:F2}i)";
         }
     }
 }

@@ -7,13 +7,7 @@
     {
         private static readonly Logger logger = new Logger();
 
-        public static Logger Instance
-        {
-            get
-            {
-                return logger;
-            }
-        }
+        public static Logger Instance => logger;
 
         private List<LogEvent> Events;
 

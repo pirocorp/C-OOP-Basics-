@@ -6,7 +6,7 @@
     {
         static void Main()
         {
-            ComplexNumber complexNum = ComplexNumber.FromPolarFactory(1, Math.PI / 3);
+            var complexNum = ComplexNumber.FromPolarFactory(1, Math.PI / 3);
             Console.WriteLine(complexNum);
         }
     }
