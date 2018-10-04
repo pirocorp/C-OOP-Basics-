@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using Interfaces;
     using Validators;
 
     public class Book : Item
@@ -31,5 +32,18 @@
         }
 
 
+        public static Book Parse(string paramsString)
+        {
+            var itemParams = GetItemParams(paramsString);
+
+            var id = itemParams["id"];
+            var title = itemParams["title"];
+            var author = itemParams["author"];
+            var price = decimal.Parse(itemParams["price"]);
+            var genre = itemParams["genre"];
+
+            var book = new Book(id, title, price, author, genre);
+            return book;
+        }
     }
 }

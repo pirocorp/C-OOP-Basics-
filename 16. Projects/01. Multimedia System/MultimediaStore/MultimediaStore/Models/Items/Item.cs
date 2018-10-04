@@ -57,5 +57,19 @@
         }
 
         public IReadOnlyCollection<string> Genres => this.genres;
+
+        protected static IDictionary<string, string> GetItemParams(string paramsString)
+        {
+            var keyValuePairs = new Dictionary<string, string>();
+            var pairs = paramsString.Split('&');
+
+            foreach (var pair in pairs)
+            {
+                var keyValuePair = pair.Split('=');
+                keyValuePairs[keyValuePair[0]] = keyValuePair[1];
+            }
+
+            return keyValuePairs;
+        }
     }
 }

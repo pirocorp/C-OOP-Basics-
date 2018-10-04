@@ -29,48 +29,83 @@
       <FileName>Models\Items\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MultimediaStore.Models.Rent" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.25" Y="0.5" Width="1.5" />
+  <Class Name="MultimediaStore.Models.Rent" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAABAQAAAIFAQAAAAEAAAAAAAAAAEAAAABAAA=</HashCode>
+      <HashCode>BAgAAAAAQBAQAAAIFAQAAAAEAAAAAAAAAAEAAAABAAA=</HashCode>
       <FileName>Models\Rent.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MultimediaStore.Models.Sale" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="15" Y="0.5" Width="1.5" />
+  <Class Name="MultimediaStore.Models.Sale" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Models\Sale.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="MultimediaStore.Core.RentManager" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\RentManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Core.SaleManager" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\SaleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Core.StoreEngine" Collapsed="true">
+    <Position X="17.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\StoreEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Validators.Validator" Collapsed="true">
+    <Position X="17" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAgAAAAAAAAAAgAAAGIACAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validators\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="MultimediaStore.Interfaces.IItem" Collapsed="true">
-    <Position X="13.25" Y="1.75" Width="1.5" />
+    <Position X="16.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAQAAAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="MultimediaStore.Interfaces.IRent" Collapsed="true">
-    <Position X="15" Y="1.75" Width="1.5" />
+    <Position X="16.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAQAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IRent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="MultimediaStore.Interfaces.ISale" Collapsed="true">
-    <Position X="13.25" Y="2.5" Width="1.5" />
+    <Position X="16.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Interfaces\ISale.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="MultimediaStore.Models.RentState" Collapsed="true">
-    <Position X="13.25" Y="3.5" Width="1.5" />
+    <Position X="16.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Models\RentState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MultimediaStore.Models.Items.AgeRestriction" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgACAAAAACA=</HashCode>
+      <FileName>Models\Items\AgeRestriction.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

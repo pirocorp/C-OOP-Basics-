@@ -29,5 +29,19 @@
                 this.length = value;
             }
         }
+
+        public static Movie Parse(string paramsString)
+        {
+            var itemParams = GetItemParams(paramsString);
+
+            var id = itemParams["id"];
+            var title = itemParams["title"];
+            var price = decimal.Parse(itemParams["price"]);
+            var genre = itemParams["genre"];
+            var length = int.Parse(itemParams["length"]);
+
+            var movie = new Movie(id, title, price, length, genre);
+            return movie;
+        }
     }
 }

@@ -20,5 +20,24 @@
         }
 
         public AgeRestriction AgeRestriction { get; private set; }
+
+        public static Game Parse(string paramsString)
+        {
+            var itemParams = GetItemParams(paramsString);
+
+            var id = itemParams["id"];
+            var title = itemParams["title"];
+            var price = decimal.Parse(itemParams["price"]);
+            var genre = itemParams["genre"];
+            var ageRestriction = ToEnum(itemParams["ageRestriction"]);
+
+            var game = new Game(id, title, price, genre, ageRestriction);
+            return game;
+        }
+
+        private static AgeRestriction ToEnum(string enumString)
+        {
+            return (AgeRestriction)Enum.Parse(typeof(AgeRestriction), enumString);
+        }
     }
 }
