@@ -102,7 +102,8 @@
 
         public override string ToString()
         {
-            return $"{this.item} Rented At: {this.rentDate} Status: {this.RentState}";
+            //return $"{this.item} Rented At: {this.rentDate} Status: {this.RentState}";
+            return this.Item.ToString();
         }
     }
 }

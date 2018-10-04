@@ -52,12 +52,34 @@
                         this.ExecuteRentCommand(item, rentDate, deadline);
                         break;
                     case "report":
+                        this.ExecuteReportCommand(commandArgs);
                         break;
                     case "exit":
                         return;
                     default:
                         throw new InvalidOperationException("Invalid command.");
                 }
+            }
+        }
+
+        private void ExecuteReportCommand(string[] commandArgs)
+        {
+            var reportType = commandArgs[0];
+            switch (reportType)
+            {
+                case "sales":
+                    var startDate = ToDateTime(commandArgs[1]);
+                    var salesIncome = SaleManager.ReportSalesIncome(startDate);
+
+                    Console.WriteLine($"{salesIncome:F2}");
+                    break;
+                case "rents":
+                    var overdueRents = RentManager.ReportOverdueRents();
+
+                    Console.WriteLine(string.Join(Environment.NewLine, overdueRents));
+                    break;
+                default:
+                    throw new ArgumentException("Invalid report type.");
             }
         }
 
