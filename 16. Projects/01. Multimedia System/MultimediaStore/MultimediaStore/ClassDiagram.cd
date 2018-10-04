@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MultimediaStore.Models.Items.Item">
+    <Position X="2.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAQQAAAEAAAAIAAAACAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Items\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MultimediaStore.Models.Items.Book">
+    <Position X="2.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Models.Items.Movie">
+    <Position X="0.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Models.Items.Game">
+    <Position X="5" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Items\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultimediaStore.Models.Rent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAABAQAAAIFAQAAAAEAAAAAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Models\Rent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MultimediaStore.Models.Sale" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Sale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="MultimediaStore.Interfaces.IItem" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MultimediaStore.Interfaces.IRent" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAQAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MultimediaStore.Interfaces.ISale" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Interfaces\ISale.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MultimediaStore.Models.RentState" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RentState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

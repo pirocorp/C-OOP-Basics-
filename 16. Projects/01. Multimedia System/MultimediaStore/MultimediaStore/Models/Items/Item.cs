@@ -41,7 +41,7 @@
             get => this.title;
             private set
             {
-                Validator.ValidateTitle(nameof(this.Title), value);
+                Validator.ValidateNonEmptyString(nameof(this.Title), value);
                 this.title = value;
             }
         }
