@@ -8,10 +8,29 @@
 
     public class Rent : IRent
     {
+        private const int DEFAULT_RENT_PERIOD_IN_DAYS = 30;
+
         private IItem item;
         private  DateTime returnDate;
         private  DateTime rentDate;
         private  DateTime deadline;
+
+        public Rent(IItem item, DateTime rentDate, DateTime deadline)
+        {
+            this.Item = item;
+            this.RentDate = rentDate;
+            this.Deadline = deadline;
+        }
+
+        public Rent(IItem item, DateTime rentDate)
+            : this(item, rentDate, rentDate.AddDays(DEFAULT_RENT_PERIOD_IN_DAYS))
+        {
+        }
+
+        public Rent(IItem item)
+            : this(item, DateTime.Now, DateTime.Now.AddDays(DEFAULT_RENT_PERIOD_IN_DAYS))
+        {
+        }
 
         public IItem Item
         {
@@ -41,13 +60,46 @@
             private set => this.deadline = value;
         }
 
-        public RentState RentState => throw new NotImplementedException();
+        public RentState RentState
+        {
+            get
+            {
+                var now = DateTime.Now;
 
-        public decimal RentFine => throw new NotImplementedException();
+                if (this.IsSetDate(this.ReturnDate))
+                {
+                    return RentState.Returned;
+                }
+                else if (now > this.Deadline)
+                {
+                    return RentState.Overdue;
+                }
+                else
+                {
+                    return RentState.Pending;
+                }
+            }
+        }
+
+        public decimal RentFine
+        {
+            get
+            {
+                var date = this.IsSetDate(this.ReturnDate) ? this.ReturnDate : DateTime.Now;
+                var fine = (date - this.Deadline).Days * this.Item.Price * 0.01m;
+
+                return Math.Max(fine, 0);
+            }
+        }
 
         public void ReturnItem()
         {
-            throw new NotImplementedException();
+            this.returnDate = DateTime.Now;
+        }
+
+        private bool IsSetDate(DateTime dateTime)
+        {
+            return dateTime.Year > 1;
         }
     }
 }
