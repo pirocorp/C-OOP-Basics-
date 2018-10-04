@@ -1,8 +1,6 @@
 ﻿namespace MultimediaStore.Validators
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public static class Validator
     {

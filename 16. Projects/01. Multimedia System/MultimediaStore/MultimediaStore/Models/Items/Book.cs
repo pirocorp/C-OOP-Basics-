@@ -1,9 +1,6 @@
 ﻿namespace MultimediaStore.Models.Items
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text;
-    using Interfaces;
     using Validators;
 
     public class Book : Item
@@ -31,7 +28,6 @@
             }
         }
 
-
         public static Book Parse(string paramsString)
         {
             var itemParams = GetItemParams(paramsString);
@@ -44,6 +40,11 @@
 
             var book = new Book(id, title, price, author, genre);
             return book;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Author: {this.Author}";
         }
     }
 }

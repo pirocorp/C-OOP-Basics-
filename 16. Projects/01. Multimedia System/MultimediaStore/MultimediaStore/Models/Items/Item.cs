@@ -1,6 +1,5 @@
 ﻿namespace MultimediaStore.Models.Items
 {
-    using System;
     using System.Collections.Generic;
     using System.Text;
     using Interfaces;
@@ -70,6 +69,18 @@
             }
 
             return keyValuePairs;
+        }
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine($"{this.GetType().Name} {this.Id}");
+            result.AppendLine($"Title: {this.Title}");
+            result.AppendLine($"Price: {this.Price:F2}");
+            result.AppendLine($"Genres: {string.Join(", ", this.Genres)}");
+
+            return result.ToString();
         }
     }
 }

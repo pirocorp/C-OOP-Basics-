@@ -1,8 +1,6 @@
 ﻿namespace MultimediaStore.Models.Items
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text;
     using Validators;
 
     public class Movie : Item
@@ -42,6 +40,11 @@
 
             var movie = new Movie(id, title, price, length, genre);
             return movie;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Length: {this.Length}";
         }
     }
 }

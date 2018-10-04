@@ -1,10 +1,7 @@
 ﻿namespace MultimediaStore.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using Interfaces;
-    using Items;
     using Validators;
 
     public class Sale : ISale

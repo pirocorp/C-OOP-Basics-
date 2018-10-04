@@ -1,11 +1,12 @@
 ﻿namespace MultimediaStore.Core
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using Interfaces;
     using Models.Items;
+    using MultimediaShop.Exceptions;
 
     public class StoreEngine
     {
@@ -36,8 +37,19 @@
                         this.ExecuteSupplyCommand(type, paramsString, quantity);
                         break;
                     case "sell":
+                        var id = commandArgs[0];
+                        var item = this.GetItemById(id);
+                        var saleDate = ToDateTime(commandArgs[1]);
+
+                        this.ExecuteSellCommand(item, saleDate);
                         break;
                     case "rent":
+                        id = commandArgs[0];
+                        item = this.GetItemById(id);
+                        var rentDate = ToDateTime(commandArgs[1]);
+                        var deadline = ToDateTime(commandArgs[2]);
+
+                        this.ExecuteRentCommand(item, rentDate, deadline);
                         break;
                     case "report":
                         break;
@@ -84,6 +96,40 @@
             }
 
             this.supplies[item] += quantity;
+        }
+
+        private IItem GetItemById(string id)
+        {
+            return this.supplies
+                .First(x => x.Key.Id == id)
+                .Key;
+        }
+
+        private static DateTime ToDateTime(string dateString)
+        {
+            return DateTime.ParseExact(dateString, DATE_TIME_FORMAT, CultureInfo.InvariantCulture);
+        }
+
+        private void ExecuteSellCommand(IItem item, DateTime saleDate)
+        {
+            if (this.supplies[item] == 0)
+            {
+                throw new InsufficientSuppliesException("There are not enough supplies to sell this item.");
+            }
+
+            SaleManager.AddSale(item, saleDate);
+            this.supplies[item]--;
+        }
+
+        private void ExecuteRentCommand(IItem item, DateTime rentDate, DateTime deadline)
+        {
+            if (this.supplies[item] == 0)
+            {
+                throw new InsufficientSuppliesException("There are not enough supplies to sell this item.");
+            }
+
+            RentManager.AddRent(item, rentDate, deadline);
+            this.supplies[item]--;
         }
     }
 }

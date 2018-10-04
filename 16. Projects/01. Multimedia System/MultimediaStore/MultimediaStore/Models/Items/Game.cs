@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     public class Game : Item
     {
@@ -38,6 +37,11 @@
         private static AgeRestriction ToEnum(string enumString)
         {
             return (AgeRestriction)Enum.Parse(typeof(AgeRestriction), enumString);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Age Restriction: {this.AgeRestriction}";
         }
     }
 }

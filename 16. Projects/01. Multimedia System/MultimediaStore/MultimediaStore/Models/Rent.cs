@@ -1,8 +1,6 @@
 ﻿namespace MultimediaStore.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using Interfaces;
     using Validators;
 
@@ -100,6 +98,11 @@
         private bool IsSetDate(DateTime dateTime)
         {
             return dateTime.Year > 1;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.item} Rented At: {this.rentDate} Status: {this.RentState}";
         }
     }
 }
