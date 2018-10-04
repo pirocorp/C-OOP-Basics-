@@ -62,27 +62,6 @@
             }
         }
 
-        private void ExecuteReportCommand(string[] commandArgs)
-        {
-            var reportType = commandArgs[0];
-            switch (reportType)
-            {
-                case "sales":
-                    var startDate = ToDateTime(commandArgs[1]);
-                    var salesIncome = SaleManager.ReportSalesIncome(startDate);
-
-                    Console.WriteLine($"{salesIncome:F2}");
-                    break;
-                case "rents":
-                    var overdueRents = RentManager.ReportOverdueRents();
-
-                    Console.WriteLine(string.Join(Environment.NewLine, overdueRents));
-                    break;
-                default:
-                    throw new ArgumentException("Invalid report type.");
-            }
-        }
-
         private void ExecuteSupplyCommand(string itemType, string paramsString, int quantity)
         {
             switch (itemType)
@@ -110,28 +89,6 @@
             }
         }
 
-        private void AddToSupplies(IItem item, int quantity)
-        {
-            if (!this.supplies.ContainsKey(item))
-            {
-                this.supplies[item] = 0;
-            }
-
-            this.supplies[item] += quantity;
-        }
-
-        private IItem GetItemById(string id)
-        {
-            return this.supplies
-                .First(x => x.Key.Id == id)
-                .Key;
-        }
-
-        private static DateTime ToDateTime(string dateString)
-        {
-            return DateTime.ParseExact(dateString, DATE_TIME_FORMAT, CultureInfo.InvariantCulture);
-        }
-
         private void ExecuteSellCommand(IItem item, DateTime saleDate)
         {
             if (this.supplies[item] == 0)
@@ -152,6 +109,49 @@
 
             RentManager.AddRent(item, rentDate, deadline);
             this.supplies[item]--;
+        }
+
+        private void ExecuteReportCommand(string[] commandArgs)
+        {
+            var reportType = commandArgs[0];
+            switch (reportType)
+            {
+                case "sales":
+                    var startDate = ToDateTime(commandArgs[1]);
+                    var salesIncome = SaleManager.ReportSalesIncome(startDate);
+
+                    Console.WriteLine($"{salesIncome:F2}");
+                    break;
+                case "rents":
+                    var overdueRents = RentManager.ReportOverdueRents();
+
+                    Console.WriteLine(string.Join(Environment.NewLine, overdueRents));
+                    break;
+                default:
+                    throw new ArgumentException("Invalid report type.");
+            }
+        }
+
+        private void AddToSupplies(IItem item, int quantity)
+        {
+            if (!this.supplies.ContainsKey(item))
+            {
+                this.supplies[item] = 0;
+            }
+
+            this.supplies[item] += quantity;
+        }
+
+        private IItem GetItemById(string id)
+        {
+            return this.supplies
+                .First(x => x.Key.Id == id)
+                .Key;
+        }
+
+        private static DateTime ToDateTime(string dateString)
+        {
+            return DateTime.ParseExact(dateString, DATE_TIME_FORMAT, CultureInfo.InvariantCulture);
         }
     }
 }
