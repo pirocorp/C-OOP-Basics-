@@ -1,10 +1,7 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
-    using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Text;
-    using System.Web;
+    using Utils;
 
     public class TextElement : Element
     {

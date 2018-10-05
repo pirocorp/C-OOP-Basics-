@@ -1,8 +1,5 @@
-﻿namespace Document_System
+﻿namespace Document_System.Utils
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using System.Web;
 
     public static class StringExtensions

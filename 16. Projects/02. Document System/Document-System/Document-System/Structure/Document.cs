@@ -1,10 +1,7 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
-    using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using System.Text;
+    using Utils;
 
     public class Document : CompositeElement
     {

@@ -1,7 +1,7 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
-    using System;
     using System.IO;
+    using Renderers;
 
     public class Font : IHtmlRenderer
     {

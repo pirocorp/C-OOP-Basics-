@@ -1,9 +1,7 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Text;
 
     public class Image : Element
     {

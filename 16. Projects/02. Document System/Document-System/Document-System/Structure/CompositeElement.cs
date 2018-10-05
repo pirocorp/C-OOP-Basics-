@@ -1,9 +1,7 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Text;
 
     public class CompositeElement : Element
     {
@@ -18,7 +16,7 @@
             this.Add(elements);
         }
 
-        private IList<Element> ChildElements { get; set; }
+        protected IList<Element> ChildElements { get; set; }
 
         public void Add(params Element[] elements)
         {

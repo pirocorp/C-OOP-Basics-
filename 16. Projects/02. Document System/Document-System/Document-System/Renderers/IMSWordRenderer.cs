@@ -1,4 +1,4 @@
-﻿namespace Document_System
+﻿namespace Document_System.Renderers
 {
     using System.IO;
 

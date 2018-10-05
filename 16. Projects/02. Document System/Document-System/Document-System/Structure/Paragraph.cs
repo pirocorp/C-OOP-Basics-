@@ -1,9 +1,6 @@
-﻿namespace Document_System
+﻿namespace Document_System.Structure
 {
-    using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Text;
 
     public class Paragraph : CompositeElement
     {
@@ -21,6 +18,7 @@
 
         public override void RenderHtml(TextWriter writer)
         {
+            writer.WriteLine();
             writer.Write("<p>");
             base.RenderHtml(writer);
             writer.WriteLine("</p>");
