@@ -1,20 +1,16 @@
-﻿namespace Document_System.Structure
+﻿namespace Document_System.Elements
 {
     using System.IO;
-    using Renderers;
+    using Enums;
 
-    public abstract class Element : IHtmlRenderer, ITextRenderer
+    public abstract class Element 
     {
-        public abstract void RenderHtml(TextWriter writer);
-
-        public abstract void RenderText(TextWriter writer);
-
         public string AsHtml
         {
             get
             {
                 var writer = new StringWriter();
-                this.RenderHtml(writer);
+                this.Render(writer, RenderTypes.Html);
                 return writer.ToString();
             }
         }
@@ -24,7 +20,7 @@
             get
             {
                 var writer = new StringWriter();
-                this.RenderText(writer);
+                this.Render(writer, RenderTypes.Text);
                 return writer.ToString();
             }
         }
@@ -33,5 +29,7 @@
         {
             return this.AsText;
         }
+
+        public abstract void Render(TextWriter writer, RenderTypes renderTypes);
     }
 }

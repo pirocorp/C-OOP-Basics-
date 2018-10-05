@@ -1,9 +1,11 @@
-﻿namespace Document_System.Structure
+﻿namespace Document_System.Elements.TextElements.FontElements
 {
     using System.IO;
+    using Enums;
     using Renderers;
+    using RendersFactories;
 
-    public class Font : IHtmlRenderer
+    public class Font
     {
         private const string DEFAULT_FONT_NAME = "Arial";
         private const float DEFAULT_FONT_SIZE = 12;
@@ -30,34 +32,10 @@
 
         public Color Color { get; set; }
 
-        public void RenderHtml(TextWriter writer)
+        public void Render(TextWriter writer, RenderTypes renderTypes)
         {
-            if (this.Name != null)
-            {
-                writer.Write($"font-family:{this.Name};");
-            }
-
-            if (this.Size != null)
-            {
-                writer.Write($"font-size:{this.Size}pt;");
-            }
-
-            if (this.Color != null)
-            {
-                writer.Write($"color:");
-                this.Color.RenderHtml(writer);
-                writer.Write(";");
-            }
-
-            if ((this.Style & FontStyle.Bold) == FontStyle.Bold)
-            {
-                writer.Write("font-weight:bold;");
-            }
-
-            if ((this.Style & FontStyle.Italic) == FontStyle.Italic)
-            {
-                writer.Write("font-style:italic;");
-            }
+            var renderer = RenderFactory.Create(renderTypes, ElementTypes.Font, this);
+            renderer.Render(writer);
         }
     }
 }

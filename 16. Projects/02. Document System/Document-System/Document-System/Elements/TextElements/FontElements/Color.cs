@@ -1,4 +1,4 @@
-﻿namespace Document_System.Structure
+﻿namespace Document_System.Elements.TextElements.FontElements
 {
     using System.IO;
 

@@ -1,9 +1,9 @@
-﻿namespace Document_System.Structure
+﻿namespace Document_System.Elements
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Text;
+    using Enums;
+    using RendersFactories;
     using Utils;
 
     public class Heading : Element
@@ -32,17 +32,10 @@
 
         public string Text { get; private set; }
 
-        public override void RenderHtml(TextWriter writer)
+        public override void Render(TextWriter writer, RenderTypes renderTypes)
         {
-            writer.WriteLine();
-            writer.WriteLine($"<h{this.HeadingSize}>{this.Text.HtmlEncode()}</h{this.HeadingSize}>");
-        }
-
-        public override void RenderText(TextWriter writer)
-        {
-            writer.WriteLine();
-            writer.WriteLine(this.Text.ToUpper());
-            
+            var renderer = RenderFactory.Create(renderTypes, ElementTypes.Heading, this);
+            renderer.Render(writer);
         }
     }
 }

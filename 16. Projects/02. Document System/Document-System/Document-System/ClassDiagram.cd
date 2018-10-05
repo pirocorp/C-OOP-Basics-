@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Document_System.Utils.StringExtensions" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.DocumentFinishRenderer" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\DocumentFinishRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.FinishRenderer" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\FinishRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.HyperlinkHtmlFinishRenderer" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\HyperlinkHtmlFinishRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.HyperlinkTextFinishRenderer" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\HyperlinkTextFinishRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.ParagraphHtmlFinish" Collapsed="true">
+    <Position X="12" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\ParagraphHtmlFinish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.FinishRenderers.ParagraphTextFinish" Collapsed="true">
+    <Position X="14.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\FinishRenderers\ParagraphTextFinish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlCompositeRenders.HtmlDocumentRenderer" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlCompositeRenders\HtmlDocumentRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlCompositeRenders.HtmlHyperlinkRenderer" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlCompositeRenders\HtmlHyperlinkRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlCompositeRenders.HtmlParagraphRenderer" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlCompositeRenders\HtmlParagraphRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlTextElementRenderers.HtmlFontRenderer" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlTextElementRenderers\HtmlFontRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlTextElementRenderers.TextFontRenderer" Collapsed="true">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextTextElementRenderers\TextFontRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.TextElements.HtmlTextElementRenderer" Collapsed="true">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlTextElementRenderers\HtmlTextElementRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.TextElements.TextElement" Collapsed="true">
+    <Position X="16.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACAACAAA=</HashCode>
+      <FileName>Elements\TextElements\TextElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlHeadingRenderer" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlHeadingRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlImageRenderer" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlImageRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.HtmlRenderers.HtmlRenderer" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\HtmlRenderers\HtmlRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextCompositeRenders.TextDocumentRenderer" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextCompositeRenders\TextDocumentRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextCompositeRenders.TextHyperlinkRenderer" Collapsed="true">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextCompositeRenders\TextHyperlinkRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextCompositeRenders.TextParagraphRenderer" Collapsed="true">
+    <Position X="14.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextCompositeRenders\TextParagraphRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextTextElementRenderers.TextTextElementRenderer" Collapsed="true">
+    <Position X="16.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextTextElementRenderers\TextTextElementRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextHeadingRenderer" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextHeadingRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextImageRenderer" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextImageRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Renderers.TextRenderers.TextRenderer" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\TextRenderers\TextRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Document_System.Elements.CompositeElements.CompositeElement" Collapsed="true">
+    <Position X="7.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAAAA=</HashCode>
+      <FileName>Elements\CompositeElements\CompositeElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.CompositeElements.Document" Collapsed="true">
+    <Position X="5.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Elements\CompositeElements\Document.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.CompositeElements.Hyperlink" Collapsed="true">
+    <Position X="7.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAA=</HashCode>
+      <FileName>Elements\CompositeElements\Hyperlink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.CompositeElements.Paragraph" Collapsed="true">
+    <Position X="10" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Elements\CompositeElements\Paragraph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.ImageElements.Image" Collapsed="true">
+    <Position X="14.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAARAAAAAAAAA=</HashCode>
+      <FileName>Elements\ImageElements\Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.ImageElements.ImageType" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAQAAAAAAAIAAAAQEAAAEAA=</HashCode>
+      <FileName>Elements\ImageElements\ImageType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.TextElements.FontElements.Color" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAgAAAAAAAAABBAAAAAAAAAAQABEAAAA=</HashCode>
+      <FileName>Elements\TextElements\FontElements\Color.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.TextElements.FontElements.Font" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEIgABAAAAAAAQAAAAAAAAAFBAQgAAAAAA=</HashCode>
+      <FileName>Elements\TextElements\FontElements\Font.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.Element" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAACAAA=</HashCode>
+      <FileName>Elements\Element.cs</FileName>
+      <NewMemberFileName>Renderers\HtmlRenderers\Element.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.Elements.Heading" Collapsed="true">
+    <Position X="12.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAABAACAAAAAA=</HashCode>
+      <FileName>Elements\Heading.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.RendersFactories.FinishRenderersFactory" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RendersFactories\FinishRenderersFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.RendersFactories.HtmlRenderFactory" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RendersFactories\HtmlRenderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.RendersFactories.RenderFactory" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RendersFactories\RenderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document_System.RendersFactories.TextRenderFactory" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RendersFactories\TextRenderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Document_System.Renderers.IRenderer" Collapsed="true">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Renderers\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Document_System.Enums.ElementTypes" Collapsed="true">
+    <Position X="24" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAAABAAAAAAAAAAAAAAAAAABACAAAAACACAAA=</HashCode>
+      <FileName>Enums\ElementRenderers.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Document_System.Enums.FinishTypes" Collapsed="true">
+    <Position X="25.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\FinishTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Document_System.Enums.RenderTypes" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACAAAAAA=</HashCode>
+      <FileName>Enums\RenderTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Document_System.Elements.TextElements.FontElements.FontStyle" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAEAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Elements\TextElements\FontElements\FontStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,7 +1,9 @@
-﻿namespace Document_System.Structure
+﻿namespace Document_System.Elements.ImageElements
 {
     using System;
     using System.IO;
+    using Enums;
+    using RendersFactories;
 
     public class Image : Element
     {
@@ -23,16 +25,10 @@
 
         public byte[] Data { get; set; }
 
-        public override void RenderHtml(TextWriter writer)
+        public override void Render(TextWriter writer, RenderTypes renderTypes)
         {
-            writer.Write($"<img src=\"data:{this.Type};base64,{Convert.ToBase64String(this.Data)}\">");
-        }
-
-        public override void RenderText(TextWriter writer)
-        {
-            writer.WriteLine();
-            writer.WriteLine("[image]");
-            writer.WriteLine();
+            var renderer = RenderFactory.Create(renderTypes, ElementTypes.Image, this);
+            renderer.Render(writer);
         }
     }
 }
