@@ -2,8 +2,12 @@
 {
     using System;
     using System.IO;
-    using Document_System;
-    using Document_System.Structure;
+    using Document_System.Elements;
+    using Document_System.Elements.CompositeElements;
+    using Document_System.Elements.ImageElements;
+    using Document_System.Elements.TextElements;
+    using Document_System.Elements.TextElements.FontElements;
+    using Document_System.Renderers.TextRenderers;
 
     public class Program
     {
