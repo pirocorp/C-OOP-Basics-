@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MassEffect.Engine.Commands.AttackCommand">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\AttackCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Engine.Commands.Command" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Engine.Commands.CreateCommand">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\CreateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Engine.Commands.OverCommand">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\OverCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Engine.Commands.PlotJumpCommand">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\PlotJumpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Engine.Commands.StatusReportCommand" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Commands\StatusReportCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Exceptions.InsufficientFuelException" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InsufficientFuelException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Exceptions.LocationOutOfRangeException" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\LocationOutOfRangeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MassEffect.Exceptions.ShipException" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ShipException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MassEffect.Interfaces.IEnhanceable" Collapsed="true">
+    <Position X="8.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Interfaces\IEnhanceable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MassEffect.Interfaces.IStarship" Collapsed="true">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiACAAAAAAAAAAAIgAAQAAAAgAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IStarship.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
