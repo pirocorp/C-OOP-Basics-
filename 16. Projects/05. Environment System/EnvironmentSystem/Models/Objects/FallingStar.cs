@@ -28,7 +28,13 @@
 
         public override IEnumerable<EnvironmentObject> ProduceObjects()
         {
-            return new List<EnvironmentObject>();
+            var producedObjects = new List<EnvironmentObject>();
+            
+            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - this.Direction.X, this.Bounds.TopLeft.Y - this.Direction.Y));
+            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - 2 * this.Direction.X, this.Bounds.TopLeft.Y - 2 * this.Direction.Y));
+            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - 3 * this.Direction.X, this.Bounds.TopLeft.Y - 3 * this.Direction.Y));
+
+            return producedObjects;
         }
     }
 }
