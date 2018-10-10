@@ -15,7 +15,7 @@
             : base(x, y, 1, 1)
         {
             this.ImageProfile = new char[,] { { SNOW_IMAGE_CHARACTER } };
-            this.CollisionGroup = CollisionGroup.Snowflake;
+            this.CollisionGroup = CollisionGroup.Snow;
         }
 
         public Snow(Rectangle bounds) : base(bounds)
