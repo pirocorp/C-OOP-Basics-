@@ -14,7 +14,7 @@
             var consoleRenderer = new ConsoleRenderer(WORLD_WIDTH, WORLD_HEIGHT);
             var collisionHandler = new CollisionHandler(WORLD_WIDTH, WORLD_HEIGHT);
 
-            var engine = new Engine(WORLD_WIDTH, 
+            var engine = new ExtendedEngine(WORLD_WIDTH, 
                 WORLD_HEIGHT, 
                 objectGenerator, 
                 collisionHandler, 
