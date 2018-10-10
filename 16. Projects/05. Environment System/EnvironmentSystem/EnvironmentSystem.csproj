@@ -56,6 +56,7 @@
     <Compile Include="Models\Objects\Ground.cs" />
     <Compile Include="Models\CollisionGroup.cs" />
     <Compile Include="Models\Objects\MovingObject.cs" />
+    <Compile Include="Models\Objects\Snow.cs" />
     <Compile Include="Models\Objects\Snowflake.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="Models\DataStructures\QuadTree.cs" />
@@ -66,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

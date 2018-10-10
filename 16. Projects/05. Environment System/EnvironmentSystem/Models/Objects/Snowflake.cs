@@ -28,7 +28,15 @@
 
         public override IEnumerable<EnvironmentObject> ProduceObjects()
         {
-            return new EnvironmentObject[0];
+            var producedObjects = new List<EnvironmentObject>();
+
+            if (!this.Exists)
+            {
+                var snow = new Snow(this.Bounds.TopLeft.X, this.Bounds.TopLeft.Y - 1);
+                producedObjects.Add(snow);
+            }
+
+            return producedObjects;
         }
     }
 }

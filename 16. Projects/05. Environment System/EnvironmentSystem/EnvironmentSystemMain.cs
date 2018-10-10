@@ -8,7 +8,7 @@
         private const int WORLD_WIDTH = 50;
         private const int WORLD_HEIGHT = 30;
 
-        static void Main()
+        public static void Main()
         {
             var objectGenerator = new ObjectGenerator(WORLD_WIDTH, WORLD_HEIGHT);
             var consoleRenderer = new ConsoleRenderer(WORLD_WIDTH, WORLD_HEIGHT);
