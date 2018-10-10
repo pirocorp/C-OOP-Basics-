@@ -53,6 +53,7 @@
     <Compile Include="Interfaces\IRenderable.cs" />
     <Compile Include="Interfaces\IRenderer.cs" />
     <Compile Include="Models\CollisionInfo.cs" />
+    <Compile Include="Models\Objects\FallingStar.cs" />
     <Compile Include="Models\Objects\Ground.cs" />
     <Compile Include="Models\CollisionGroup.cs" />
     <Compile Include="Models\Objects\MovingObject.cs" />
