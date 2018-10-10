@@ -39,6 +39,12 @@
 
         public override void RespondToCollision(CollisionInfo collisionInfo)
         {
+            var hitObject = collisionInfo.HitObject.CollisionGroup;
+
+            if (hitObject == CollisionGroup.Explosion)
+            {
+                this.Exists = false;
+            }
         }
 
         public override IEnumerable<EnvironmentObject> ProduceObjects()

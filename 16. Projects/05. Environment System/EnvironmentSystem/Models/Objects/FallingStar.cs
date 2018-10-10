@@ -20,7 +20,7 @@
         {
             var hitObject = collisionInfo.HitObject.CollisionGroup;
 
-            if (hitObject == CollisionGroup.Ground)
+            if (hitObject == CollisionGroup.Ground || hitObject == CollisionGroup.Explosion)
             {
                 this.Exists = false;
             }
@@ -28,11 +28,13 @@
 
         public override IEnumerable<EnvironmentObject> ProduceObjects()
         {
-            var producedObjects = new List<EnvironmentObject>();
-            
-            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - this.Direction.X, this.Bounds.TopLeft.Y - this.Direction.Y));
-            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - 2 * this.Direction.X, this.Bounds.TopLeft.Y - 2 * this.Direction.Y));
-            producedObjects.Add(new Tail(this.Bounds.TopLeft.X - 3 * this.Direction.X, this.Bounds.TopLeft.Y - 3 * this.Direction.Y));
+            var producedObjects = new List<EnvironmentObject>
+            {
+                new Tail(this.Bounds.TopLeft.X - this.Direction.X, this.Bounds.TopLeft.Y - this.Direction.Y),
+                new Tail(this.Bounds.TopLeft.X - 2 * this.Direction.X, this.Bounds.TopLeft.Y - 2 * this.Direction.Y),
+                new Tail(this.Bounds.TopLeft.X - 3 * this.Direction.X, this.Bounds.TopLeft.Y - 3 * this.Direction.Y)
+            };
+
 
             return producedObjects;
         }
