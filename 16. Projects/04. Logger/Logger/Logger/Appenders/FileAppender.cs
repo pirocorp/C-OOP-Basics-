@@ -7,19 +7,23 @@
     public class FileAppender : Appender
     {
         private readonly string path;
+        private readonly StreamWriter writer;
 
         public FileAppender(IFormatter format, string path) 
             : base(format)
         {
             this.path = path;
+            this.writer = new StreamWriter(this.path, true);
         }
 
         public override void Append(string message, ReportLevel reportLevel, DateTime date)
         {
-            var writer = new StreamWriter(this.path, true);
-            writer.WriteLine(this.Formatter.Format(message, reportLevel, date));
+            this.writer.WriteLine(this.Formatter.Format(message, reportLevel, date));
+        }
 
-            writer.Close();
+        public void Close()
+        {
+            this.writer.Close();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace ConsoleTestApp
 {
+    using System;
     using Logger;
     using Logger.Appenders;
     using Logger.Formatters;
@@ -13,8 +14,16 @@
             var consoleAppender = new ConsoleAppender(xmlFormat);
             var fileAppender = new FileAppender(xmlFormat, "log.txt");
             var logger = new Logger(consoleAppender);
-            logger.Critical("Out of Memory");
-            logger.Info("Unused local variable 'name'");
+
+            try
+            {
+                logger.Critical("Out of Memory");
+                logger.Info("Unused local variable 'name'");
+            }
+            finally 
+            {
+                fileAppender.Close();
+            }
         }
     }
 }
