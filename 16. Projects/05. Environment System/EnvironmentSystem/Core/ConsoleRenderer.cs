@@ -4,7 +4,6 @@
     using System.Text;
 
     using Interfaces;
-    using Models;
 
     public class ConsoleRenderer : IRenderer
     {

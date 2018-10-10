@@ -1,7 +1,6 @@
 ﻿namespace EnvironmentSystem.Models.Objects
 {
     using System.Collections.Generic;
-    using System.Runtime.InteropServices;
 
     public class UnstableStar : FallingStar
     {
