@@ -35,6 +35,7 @@
                 var x = this.randomGenerator.Next(0, this.worldWidth);
                 var y = this.randomGenerator.Next(0, 20);
 
+                generatedObjects.Add(new Star(x, y));
             }
 
             generatedObjects.Add(new Ground(0, 25, 50, 2, '#'));
